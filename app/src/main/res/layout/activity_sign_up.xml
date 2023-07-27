@@ -10,7 +10,7 @@
         android:id="@+id/ivSinUpLogo"
         android:layout_width="350dp"
         android:layout_height="280dp"
-        android:src="@drawable/sin_up_icon"
+        android:src="@drawable/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -10,7 +10,7 @@
         android:id="@+id/ivSinInLogo"
         android:layout_width="350dp"
         android:layout_height="280dp"
-        android:src="@drawable/sin_in_logo"
+        android:src="@drawable/login_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,30 +56,30 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/start_end_margin"
-        android:layout_marginEnd="@dimen/start_end_margin"
         android:layout_marginTop="10dp"
-        app:boxStrokeWidth="2dp"
-        app:passwordToggleEnabled="true"
+        android:layout_marginEnd="@dimen/start_end_margin"
+        android:orientation="vertical"
         app:boxCornerRadiusBottomEnd="@dimen/til_radius"
         app:boxCornerRadiusBottomStart="@dimen/til_radius"
         app:boxCornerRadiusTopEnd="@dimen/til_radius"
         app:boxCornerRadiusTopStart="@dimen/til_radius"
+        app:boxStrokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilEmail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
+        app:passwordToggleEnabled="true">
+
         <EditText
             android:id="@+id/etSinInPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:hint="Password"
-            android:textSize="@dimen/et_text_size"
-            />
+            android:inputType="textPassword"
+            android:textSize="@dimen/et_text_size" />
     </com.google.android.material.textfield.TextInputLayout>
     <TextView
         android:id="@+id/tvForgotPassword"
