@@ -10,32 +10,35 @@
         android:id="@+id/textView"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="@string/get_started_text"
-        android:textColor="@color/blue_5"
-        android:textSize="40sp"
+        android:textColor="@color/green_2"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="350dp"
         android:layout_height="350dp"
-        android:src="@drawable/boy_trash_throw"
+        android:contentDescription="image"
+        android:src="@drawable/onboard"
         app:layout_constraintBottom_toTopOf="@+id/cvGetStarted"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:contentDescription="image" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGetStarted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        app:cardBackgroundColor="@color/black"
+        app:cardBackgroundColor="@color/green_1"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,8 +51,8 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="181dp"
+                android:layout_height="62dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:gravity="center"
@@ -58,10 +61,7 @@
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/arrow_right" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
