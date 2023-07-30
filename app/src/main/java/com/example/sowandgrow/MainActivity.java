@@ -1,10 +1,8 @@
 package com.example.sowandgrow;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -12,6 +10,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 public class MainActivity extends AppCompatActivity {
 
     ViewPager mSLideViewPager;
@@ -25,6 +25,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        boolean onboardingShownBefore = sharedPreferences.getBoolean("onboardingShown", false);
+        if (onboardingShownBefore) {
+            // Onboarding already shown, proceed to the main activity or login screen
+            startActivity(new Intent(this, MainActivity2.class));
+            finish();
+        } else {
+            // Onboarding not shown yet, show onboarding screen
+            setContentView(R.layout.activity_main);
+
+            // ... (your existing code for onboarding)
+
+            // When the user completes the onboarding, set the flag to true indicating it has been shown
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("onboardingShown", true);
+            editor.apply();
+        }
         setContentView(R.layout.activity_main);
 
         backbtn = findViewById(R.id.backbtn);
