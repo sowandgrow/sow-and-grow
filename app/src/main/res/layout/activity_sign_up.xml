@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/ivSinUpLogo"
-        android:layout_width="350dp"
-        android:layout_height="280dp"
-        android:src="@drawable/sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="image" />
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/signup"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/tvSinUp"
         android:layout_width="wrap_content"

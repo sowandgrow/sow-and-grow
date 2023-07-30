@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/login"
         android:id="@+id/ivSinInLogo"
-        android:layout_width="350dp"
-        android:layout_height="280dp"
-        android:src="@drawable/login_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="image" />
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
