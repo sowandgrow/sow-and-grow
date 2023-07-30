@@ -9,7 +9,8 @@
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/search2" />
+        android:id="@+id/gifImageView"
+        android:src="@drawable/search" />
 
     <TextView
         android:id="@+id/texttitle"
@@ -32,6 +33,5 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"/>
-
 
 </LinearLayout>
