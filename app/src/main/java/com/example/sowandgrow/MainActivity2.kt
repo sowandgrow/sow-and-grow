@@ -27,7 +27,7 @@ class MainActivity2 : AppCompatActivity() {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
+// To Logout from app
         binding.btnSignOut.setOnClickListener {
             if (auth.currentUser != null) {
                 // Sign out of Firebase
