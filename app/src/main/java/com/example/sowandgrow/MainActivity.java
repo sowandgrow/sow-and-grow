@@ -64,19 +64,18 @@ public class MainActivity extends AppCompatActivity {
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int totalSlides = viewPagerAdapter.getCount();
 
-                if (getitem(0) < 3)
-                    mSLideViewPager.setCurrentItem(getitem(1),true);
-                else {
-
-                    Intent i = new Intent(MainActivity.this,MainActivity2.class);
+                if (getitem(0) < totalSlides - 1) {
+                    mSLideViewPager.setCurrentItem(getitem(1), true);
+                } else {
+                    Intent i = new Intent(MainActivity.this, MainActivity2.class);
                     startActivity(i);
                     finish();
-
                 }
-
             }
         });
+
 
         skipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
