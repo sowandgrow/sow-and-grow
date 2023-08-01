@@ -21,17 +21,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:contentDescription="image"
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="825dp"
         android:src="@drawable/onboard"
-        app:layout_constraintBottom_toTopOf="@+id/cvGetStarted"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.483" />
+        android:id="@+id/ivSinInLogo"
+        tools:ignore="MissingConstraints" />
+
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGetStarted"
