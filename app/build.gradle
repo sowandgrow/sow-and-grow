@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId "com.example.sowandgrow"
         minSdk 25
-        targetSdk 33
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -51,8 +51,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation 'com.google.firebase:firebase-firestore-ktx:24.7.0'
     implementation("com.google.android.gms:play-services-auth:20.6.0")
-    
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.21'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.27'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
