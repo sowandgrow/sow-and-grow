@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         nextbtn = findViewById(R.id.nextbtn);
         skipbtn = findViewById(R.id.skipButton);
 
+
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         mSLideViewPager.addOnPageChangeListener(viewListener);
 
     }
+
 
     public void setUpindicator(int position){
 

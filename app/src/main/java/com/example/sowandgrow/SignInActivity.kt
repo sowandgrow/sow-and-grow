@@ -36,12 +36,12 @@ class SignInActivity : BaseActivity() {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this,gso)
-// For Sign Up
+        // For Sign Up
         binding?.tvRegister?.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
             finish()
         }
-// Forgot Password Intent
+        // Forgot Password Intent
         binding?.tvForgotPassword?.setOnClickListener{
             startActivity(Intent(this,ForgetPasswordActivity::class.java))
             finish()

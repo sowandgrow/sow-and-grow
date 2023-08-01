@@ -1,5 +1,6 @@
 package com.example.sowandgrow
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -45,6 +46,9 @@ class ForgetPasswordActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
+        // When the back button is pressed, navigate to SignInActivity
+        val signInIntent = Intent(this, SignInActivity::class.java)
+        startActivity(signInIntent)
         finish()
     }
 
