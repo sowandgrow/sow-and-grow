@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Search"
+        android:id="@+id/search"
+        android:icon="@drawable/search1"/>
+    <item android:title="Health"
+        android:id="@+id/health"
+        android:icon="@drawable/health1"/>
+    <item android:title="My Garden"
+        android:id="@+id/mygarden"
+        android:icon="@drawable/mygarden"/>
+
+
+</menu>

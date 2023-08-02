@@ -42,5 +42,10 @@ class MainActivity2 : AppCompatActivity() {
                 }
             }
         }
+        binding.home.setOnClickListener{
+            startActivity(Intent(this, MainScreenActivity::class.java))
+            finish()
+        }
     }
+
 }
