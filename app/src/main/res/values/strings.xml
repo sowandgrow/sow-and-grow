@@ -17,4 +17,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    // Profile Values
+
+    <string name="profile_picture">Profile Picture</string>
+    <string name="default_name">John Doe</string>
+    <string name="default_location">Unknown</string>
+    <string name="default_email">Unknown</string>
+    <string name="hint_name">Enter your name</string>
+    <string name="hint_location">Enter your location</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="edit_button">Edit Profile</string>
+    <string name="save_button">Save Changes</string>
+    <string name="sign_out_button">Sign Out</string>
+
+
+
+
 </resources>

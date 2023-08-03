@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         boolean onboardingShownBefore = sharedPreferences.getBoolean("onboardingShown", false);
         if (onboardingShownBefore) {
             // Onboarding already shown, proceed to the main activity or login screen
-            startActivity(new Intent(this, MainActivity2.class));
+            startActivity(new Intent(this, MainScreenActivity.class));
             finish();
         } else {
             // Onboarding not shown yet, show onboarding screen
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 if (getitem(0) < totalSlides - 1) {
                     mSLideViewPager.setCurrentItem(getitem(1), true);
                 } else {
-                    Intent i = new Intent(MainActivity.this, MainActivity2.class);
+                    Intent i = new Intent(MainActivity.this, MainScreenActivity.class);
                     startActivity(i);
                     finish();
                 }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent i = new Intent(MainActivity.this,MainActivity2.class);
+                Intent i = new Intent(MainActivity.this,MainScreenActivity.class);
                 startActivity(i);
                 finish();
 

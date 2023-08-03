@@ -3,6 +3,7 @@ package com.example.sowandgrow
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import com.example.sowandgrow.databinding.ActivitySignUpBinding
@@ -37,32 +38,30 @@ class SignUpActivity : BaseActivity() {
         finish()
     }
 
-    private fun registerUser()
-    {
+    private fun registerUser() {
         val name = binding?.etSinUpName?.text.toString()
         val email = binding?.etSinUpEmail?.text.toString()
         val password = binding?.etSinUpPassword?.text.toString()
-        if (validateForm(name, email, password))
-        {
+
+        if (validateForm(name, email, password)) {
             showProgressBar()
             auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this){task ->
-                    if (task.isSuccessful)
-                    {
-                        showToast(this,"User Id Created successfully")
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        showToast(this, "User Id Created successfully")
                         hideProgressBar()
-                        startActivity(Intent(this,MainActivity::class.java))
+                        startActivity(Intent(this, MainActivity::class.java))
                         finish()
-                    }
-                    else
-                    {
-                        Toast.makeText(this,"Oops! Something went wrong", Toast.LENGTH_SHORT).show()
+                    } else {
+                        val errorMessage = task.exception?.message ?: "Oops! Something went wrong"
+                        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                         hideProgressBar()
+                        Log.e("SignUpActivity", "Error during sign-up: $errorMessage")
                     }
-
                 }
         }
     }
+
 
     private fun validateForm(name:String, email:String,password:String):Boolean
     {
