@@ -23,21 +23,6 @@ class MainScreenActivity : AppCompatActivity() {
         firebaseAuth = Firebase.auth
 
         // Set the initial profile picture (blank or user's Google profile picture)
-        setProfilePicture()
-
-        binding.profilePictureButton.setOnClickListener {
-            val user = firebaseAuth.currentUser
-            if (user != null) {
-                // User is signed in, redirect to ProfileActivity
-                val intent = Intent(this, ProfileActivity::class.java)
-                startActivity(intent)
-            } else {
-                // User is not signed in, handle the login process or show an error message.
-                // For simplicity, you can redirect to a login screen.
-                // For Google sign-in, you can use Firebase Auth's built-in Google Sign-in feature.
-                // Handle sign-in process here...
-            }
-        }
 
         replaceFragment(Search())
 
@@ -53,7 +38,6 @@ class MainScreenActivity : AppCompatActivity() {
             true
         }
     }
-
     private fun setProfilePicture() {
         val user = firebaseAuth.currentUser
         if (user != null) {

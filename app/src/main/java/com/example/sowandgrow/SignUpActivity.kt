@@ -61,8 +61,6 @@ class SignUpActivity : BaseActivity() {
                 }
         }
     }
-
-
     private fun validateForm(name:String, email:String,password:String):Boolean
     {
         return when {
