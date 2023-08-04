@@ -14,6 +14,22 @@
     <color name="green_3">#2AAA8A</color>
     <color name="green_4">#90EE90</color>
     <color name="green_5">#93C572</color>
+
+    //profile
+    <color name="colorPrimary">#49BEFF</color>
+    <color name="colorPrimaryDark">#65DCE5</color>
+    <color name="colorAccent">#0D5D98</color>
+    <color name="address">#2F7092</color>
+    <color name="followers">#0D5D98</color>
+    <color name="headings">#3797CF</color>
+    <color name="solidCircle">#80FFFFFF</color>
+    <color name="circleBorder">#30FFFFFF</color>
+    <color name="gradEnd">#67EFC8</color>
+    <color name="gradStart">#63C9FF</color>
+    <color name="followersBg">#65DCE5</color>
+    <color name="followingBg">#49BEFF</color>
+    <color name="grey">#E5E5E5</color>
+
     //onboarding colors
     <color name="background">#F0F4F3</color>
     <color name="buttontext">#50C2C9</color>
