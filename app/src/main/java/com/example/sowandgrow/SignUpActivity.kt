@@ -8,15 +8,14 @@ import android.util.Patterns
 import android.widget.Toast
 import com.example.sowandgrow.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : BaseActivity() {
 
     private var binding: ActivitySignUpBinding? = null
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -25,16 +24,15 @@ class SignUpActivity : BaseActivity() {
         auth = Firebase.auth
 
         binding?.tvLoginPage?.setOnClickListener {
-            startActivity(Intent(this,SignInActivity::class.java))
+            startActivity(Intent(this, SignInActivity::class.java))
             finish()
         }
-
 
         binding?.btnSignUp?.setOnClickListener { registerUser() }
     }
 
     override fun onBackPressed() {
-        startActivity(Intent(this,SignInActivity::class.java))
+        startActivity(Intent(this, SignInActivity::class.java))
         finish()
     }
 
@@ -50,7 +48,11 @@ class SignUpActivity : BaseActivity() {
                     if (task.isSuccessful) {
                         showToast(this, "User Id Created successfully")
                         hideProgressBar()
-                        startActivity(Intent(this, MainActivity::class.java))
+
+                        // Pass user's name to ProfileActivity
+                        val intent = Intent(this, ProfileActivity::class.java)
+                        intent.putExtra("userName", name)
+                        startActivity(intent)
                         finish()
                     } else {
                         val errorMessage = task.exception?.message ?: "Oops! Something went wrong"
@@ -61,22 +63,22 @@ class SignUpActivity : BaseActivity() {
                 }
         }
     }
-    private fun validateForm(name:String, email:String,password:String):Boolean
-    {
+
+    private fun validateForm(name: String, email: String, password: String): Boolean {
         return when {
-            TextUtils.isEmpty(name)->{
+            TextUtils.isEmpty(name) -> {
                 binding?.tilName?.error = "Enter name"
                 false
             }
-            TextUtils.isEmpty(email) && !Patterns.EMAIL_ADDRESS.matcher(email).matches()->{
+            TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
                 binding?.tilEmail?.error = "Enter valid email address"
                 false
             }
-            TextUtils.isEmpty(password)->{
+            TextUtils.isEmpty(password) -> {
                 binding?.tilPassword?.error = "Enter password"
                 false
             }
-            else -> { true }
+            else -> true
         }
     }
 }

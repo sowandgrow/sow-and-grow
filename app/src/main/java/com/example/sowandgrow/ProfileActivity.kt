@@ -1,29 +1,27 @@
 package com.example.sowandgrow
 
-import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.widget.EditText
-import android.widget.ImageView
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.google.android.material.textfield.TextInputEditText
 import android.app.AlertDialog
-import android.content.SharedPreferences
-import android.widget.Button
+import android.util.Log
+import android.widget.EditText
+import android.widget.ImageView
+import com.bumptech.glide.Glide
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var sharedPreferences: SharedPreferences
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -36,6 +34,12 @@ class ProfileActivity : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.email)
         val profileImageView = findViewById<ImageView>(R.id.profile_image)
         val locationInput = findViewById<TextInputEditText>(R.id.location)
+
+        // Retrieve user's name from intent extras
+        val userName = intent.getStringExtra("userName")
+
+        // Set the retrieved name in the nameEditText
+        nameEditText.setText(userName)
 
         // Fetch and display profile picture
         if (user?.photoUrl != null) {
