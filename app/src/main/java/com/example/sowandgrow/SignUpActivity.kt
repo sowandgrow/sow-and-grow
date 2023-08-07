@@ -50,8 +50,7 @@ class SignUpActivity : BaseActivity() {
                         hideProgressBar()
 
                         // Pass user's name to ProfileActivity
-                        val intent = Intent(this, ProfileActivity::class.java)
-                        intent.putExtra("userName", name)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {

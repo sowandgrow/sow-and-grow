@@ -1,9 +1,7 @@
 package com.example.sowandgrow
 
 import android.app.Activity
-import android.app.Instrumentation.ActivityResult
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -99,7 +97,8 @@ class SignInActivity : BaseActivity() {
         }
     }
 
-    private fun updateUI(account: GoogleSignInAccount) {
+
+     fun updateUI(account: GoogleSignInAccount) {
         showProgressBar()
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         auth.signInWithCredential(credential).addOnCompleteListener {

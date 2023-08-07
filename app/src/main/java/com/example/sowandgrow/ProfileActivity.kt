@@ -1,21 +1,21 @@
 package com.example.sowandgrow
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import com.google.android.material.textfield.TextInputEditText
-import android.app.AlertDialog
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -29,7 +29,6 @@ class ProfileActivity : AppCompatActivity() {
         auth = Firebase.auth
         val user = auth.currentUser
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-
         val nameEditText = findViewById<EditText>(R.id.name)
         val emailEditText = findViewById<EditText>(R.id.email)
         val profileImageView = findViewById<ImageView>(R.id.profile_image)
