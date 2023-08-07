@@ -31,6 +31,7 @@ class SignUpActivity : BaseActivity() {
         binding?.btnSignUp?.setOnClickListener { registerUser() }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         startActivity(Intent(this, SignInActivity::class.java))
         finish()
@@ -49,8 +50,8 @@ class SignUpActivity : BaseActivity() {
                         showToast(this, "User Id Created successfully")
                         hideProgressBar()
 
-                        // Pass user's name to ProfileActivity
                         val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("userName", name)
                         startActivity(intent)
                         finish()
                     } else {
