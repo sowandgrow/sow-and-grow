@@ -1,49 +1,50 @@
 package com.example.sowandgrow
 
-import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import android.app.AlertDialog
-import android.widget.Button
-import com.google.firebase.FirebaseApp
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var userRef: DatabaseReference
+    private lateinit var sharedPreferences: SharedPreferences
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
         auth = Firebase.auth
         val user = auth.currentUser
-        FirebaseApp.initializeApp(this)
-
+        sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         val nameEditText = findViewById<EditText>(R.id.name)
         val emailEditText = findViewById<EditText>(R.id.email)
         val profileImageView = findViewById<ImageView>(R.id.profile_image)
         val locationInput = findViewById<TextInputEditText>(R.id.location)
 
-        val database = FirebaseDatabase.getInstance()
-        userRef = database.reference.child("users").child(auth.currentUser?.uid ?: "")
+        // Retrieve user's name from intent extras
+        val userName = intent.getStringExtra("userName")
+
+        // Set the retrieved name in the nameEditText
+        nameEditText.setText(userName)
+        // Set the display name from Firebase user data
+        nameEditText.setText(user?.displayName)
 
         // Fetch and display profile picture
         if (user?.photoUrl != null) {
@@ -54,21 +55,9 @@ class ProfileActivity : AppCompatActivity() {
             // Set a default image or handle missing profile picture
         }
 
-        userRef.child("hemisphere").addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val selectedHemisphere = snapshot.getValue(String::class.java)
-                if (!selectedHemisphere.isNullOrEmpty()) {
-                    locationInput.setText(selectedHemisphere)
-                    Log.d("ProfileActivity", "Retrieved selected hemisphere: $selectedHemisphere")
-                } else {
-                    Log.d("ProfileActivity", "No selected hemisphere found in database")
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.e("ProfileActivity", "Database error: ${error.message}")
-            }
-        })
+        // Retrieve selected hemisphere from SharedPreferences
+        val selectedHemisphere = sharedPreferences.getString("selectedHemisphere", "")
+        locationInput.setText(selectedHemisphere)
 
         locationInput.setOnClickListener {
             showHemisphereDialog(locationInput)
@@ -78,6 +67,16 @@ class ProfileActivity : AppCompatActivity() {
 
         nameEditText.setText(user?.displayName)
         emailEditText.setText(user?.email)
+
+        // Set an OnEditorActionListener to nameEditText
+        nameEditText.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || (event?.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
+                val newName = nameEditText.text.toString()
+                updateUserDisplayName(newName)
+                return@setOnEditorActionListener true
+            }
+            false
+        }
 
         signOutButton.setOnClickListener {
             if (auth.currentUser != null) {
@@ -91,6 +90,24 @@ class ProfileActivity : AppCompatActivity() {
                     finish()
                 }
             }
+        }
+    }
+
+    private fun updateUserDisplayName(newName: String) {
+        val user = auth.currentUser
+        if (user != null) {
+            val profileUpdates = UserProfileChangeRequest.Builder()
+                .setDisplayName(newName)
+                .build()
+
+            user.updateProfile(profileUpdates)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        showToast("Display name updated")
+                    } else {
+                        showToast("Failed to update display name")
+                    }
+                }
         }
     }
 
@@ -110,8 +127,8 @@ class ProfileActivity : AppCompatActivity() {
 
                 Log.d("ProfileActivity", "Saving selected hemisphere: $selectedHemisphere")
 
-                // Update selected hemisphere in Firebase Database
-                userRef.child("hemisphere").setValue(selectedHemisphere)
+                // Save selected hemisphere in SharedPreferences
+                sharedPreferences.edit().putString("selectedHemisphere", selectedHemisphere).apply()
             }
             dialog.dismiss()
         }
@@ -120,5 +137,9 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         builder.show()
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this@ProfileActivity, message, Toast.LENGTH_SHORT).show()
     }
 }

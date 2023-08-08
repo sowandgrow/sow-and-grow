@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         boolean onboardingShownBefore = sharedPreferences.getBoolean("onboardingShown", false);
-        if (onboardingShownBefore) {
+
+            if (onboardingShownBefore) {
             // Onboarding already shown, proceed to the main activity or login screen
             startActivity(new Intent(this, MainScreenActivity.class));
             finish();

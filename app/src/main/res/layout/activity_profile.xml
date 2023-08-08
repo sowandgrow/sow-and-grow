@@ -5,24 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background9"
-    tools:context="com.example.sowandgrow.ProfileActivity"
+    android:background="@drawable/background"
+    tools:context=".ProfileActivity"
     tools:layout_editor_absoluteX="-16dp"
     tools:layout_editor_absoluteY="226dp">
-
-    <TextView
-        android:id="@+id/tv_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif"
-        android:text="Mumbai, India"
-        android:textAllCaps="true"
-        android:textColor="@color/address"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <ImageView
         android:id="@+id/profile_image"
@@ -35,6 +21,22 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"
+        android:text=""
+        android:textAllCaps="true"
+        android:textColor="@color/address"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_name"
