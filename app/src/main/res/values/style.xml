@@ -16,5 +16,43 @@
         <item name="android:textColor">#0f0f0f</item> <!-- Change this color to the desired darker color -->
     </style>
 
+    <style name="progress_bar_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">11dp</item>
+    </style>
+
+    <style name="small_icon_style">
+        <item name="android:layout_width">13dp</item>
+        <item name="android:layout_height">13dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="common_check_box_style">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <style name="water_check_theme">
+        <item name="colorAccent">@color/blue_500</item>
+    </style>
+
+    <style name="fertilizer_check_theme">
+        <item name="colorAccent">@color/bronze_500</item>
+    </style>
+
+    <style name="spray_check_theme">
+        <item name="colorAccent">@color/green_500</item>
+    </style>
+
+    <style name="toolbar_icon_style">
+        <item name="android:layout_width">@dimen/toolbar_icon_size</item>
+        <item name="android:layout_height">@dimen/toolbar_icon_size</item>
+    </style>
+
 
 </resources>
