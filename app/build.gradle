@@ -55,7 +55,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.6.0")
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.27'
-    implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
 
 
     testImplementation 'junit:junit:4.13.2'
@@ -67,5 +67,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0' // For design library
     implementation 'androidx.percentlayout:percentlayout:1.0.0' // For percent library
     implementation 'androidx.cardview:cardview:1.0.0' // For cardview
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
 
 }
