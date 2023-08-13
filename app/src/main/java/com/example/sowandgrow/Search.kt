@@ -1,13 +1,14 @@
 package com.example.sowandgrow
 
-import android.annotation.SuppressLint
+
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.textfield.TextInputEditText
 import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputEditText
 
 class Search : Fragment() {
 
@@ -22,18 +23,24 @@ class Search : Fragment() {
         }
     }
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
 
-        // Set up the click listener for TextInputEditText
+        // Find the TextInputEditText
         val nameEditText: TextInputEditText = view.findViewById(R.id.searchBox)
+
+        // Set up the click listener for TextInputEditText
         nameEditText.setOnClickListener {
-            val intent = Intent(activity, PlantRecyclerView::class.java)
+            // Create an Intent to navigate to MyPlantFragments
+            val intent = Intent(activity, MyPlantsFragment::class.java)
+
+            // Optionally, you can add extras to the intent if needed
+            // intent.putExtra("key", "value")
+
+            // Start the activity with the intent
             startActivity(intent)
         }
 
@@ -54,6 +61,3 @@ class Search : Fragment() {
             }
     }
 }
-
-
-
