@@ -28,8 +28,6 @@
         android:id="@+id/ivSinInLogo"
         tools:ignore="MissingConstraints" />
 
-
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGetStarted"
         android:layout_width="wrap_content"
