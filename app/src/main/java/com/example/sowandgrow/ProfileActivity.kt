@@ -11,7 +11,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,7 +20,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class ProfileActivity : AppCompatActivity() {
+class ProfileActivity : BaseActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var sharedPreferences: SharedPreferences
@@ -80,6 +79,7 @@ class ProfileActivity : AppCompatActivity() {
 
         signOutButton.setOnClickListener {
             if (auth.currentUser != null) {
+                showProgressBar()
                 auth.signOut()
                 val googleSignInClient = GoogleSignIn.getClient(
                     this@ProfileActivity,
@@ -88,6 +88,7 @@ class ProfileActivity : AppCompatActivity() {
                 googleSignInClient.signOut().addOnCompleteListener {
                     startActivity(Intent(this@ProfileActivity, SignInActivity::class.java))
                     finish()
+                    hideProgressBar()
                 }
             }
         }
