@@ -32,7 +32,7 @@
     //recycler view
     <string name="common_name">Common Name</string>
     <string name="choose_plant_photo">Take or choose a new plant photo.</string>
-    <string name="latin_name">Latin Name (optional)</string>
+    <string name="botanical_name">Botanical Name </string>
     <string name="description">Description</string>
     <string name="name">Name</string>
     <string name="type">Type</string>
