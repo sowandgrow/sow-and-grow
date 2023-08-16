@@ -45,5 +45,6 @@
     <string name="no_plants_added">
         No plants added.\n
         To add new plant go to "Add Plant." </string>
+    <string name="search">Search</string>
 
 </resources>
