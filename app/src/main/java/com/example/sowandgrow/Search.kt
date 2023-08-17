@@ -2,7 +2,6 @@ package com.example.sowandgrow
 
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,13 +34,13 @@ class Search : Fragment() {
         // Set up the click listener for TextInputEditText
         nameEditText.setOnClickListener {
             // Create an Intent to navigate to MyPlantFragments
-            val intent = Intent(activity, MyPlantsFragment::class.java)
+           // val intent = Intent(activity, MyPlantsFragment::class.java)
 
             // Optionally, you can add extras to the intent if needed
             // intent.putExtra("key", "value")
 
             // Start the activity with the intent
-            startActivity(intent)
+            //startActivity(intent)
         }
 
         return view
@@ -50,14 +49,5 @@ class Search : Fragment() {
     companion object {
         private const val ARG_PARAM1 = "param1"
         private const val ARG_PARAM2 = "param2"
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Search().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

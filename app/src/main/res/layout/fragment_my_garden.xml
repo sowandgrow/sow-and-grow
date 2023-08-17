@@ -10,8 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MyGarden Fragment"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
+        android:textSize="26sp"
+        android:layout_gravity="center"
+        tools:ignore="HardcodedText" />
 
     <ImageButton
         android:id="@+id/profilePictureButton"
@@ -21,7 +22,8 @@
         android:layout_margin="16dp"
         android:background="@android:color/transparent"
         android:contentDescription="Profile Picture"
-        android:src="@drawable/ic_default_profile_picture" />
+        android:src="@drawable/ic_default_profile_picture"
+        tools:ignore="HardcodedText" />
 
 
 </FrameLayout>
