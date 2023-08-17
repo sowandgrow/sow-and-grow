@@ -12,8 +12,8 @@ class PlantsAdapter(private val plantsList:ArrayList<Plants>)
 
     class PlantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val imageView : ImageView = itemView.findViewById(R.id.imageViewplant)
-        val textView : TextView = itemView.findViewById(R.id.textViewplant)
+        val imageView : ImageView = itemView.findViewById(R.id.imageviewplant)
+        val textView : TextView = itemView.findViewById(R.id.textviewplant)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantsViewHolder {

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
     android:layout_marginHorizontal="10dp"
@@ -13,35 +14,27 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageViewplant"
+            android:id="@+id/imageviewplant"
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
             android:src="@drawable/snakeplant"
-            app:layout_constraintBottom_toBottom0f="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTop0f="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewplant"
+            android:id="@+id/textviewplant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Snake Plant"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottom0f="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEnd0f="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageViewplant"
-            app:layout_constraintTop_toTop0f="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintStart_toEndOf="@+id/imageviewplant"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
