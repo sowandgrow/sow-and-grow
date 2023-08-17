@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -24,9 +23,11 @@
         android:theme="@style/Theme.SowAndGrow"
         tools:targetApi="31">
         <activity
+            android:name=".DiscoverPlant"
+            android:exported="false" />
+        <activity
             android:name=".DiscoverRecyclerView"
             android:exported="false" />
-
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
