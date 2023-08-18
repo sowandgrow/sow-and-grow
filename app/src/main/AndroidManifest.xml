@@ -23,6 +23,9 @@
         android:theme="@style/Theme.SowAndGrow"
         tools:targetApi="31">
         <activity
+            android:name=".plantdetails.SnakePlant"
+            android:exported="false" />
+        <activity
             android:name=".DiscoverPlant"
             android:exported="false" />
         <activity

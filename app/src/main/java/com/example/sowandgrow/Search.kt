@@ -29,11 +29,12 @@ class Search : Fragment() {
 
         // Find the TextInputEditText
         val nameEditText: TextInputEditText = view.findViewById(R.id.searchBox)
+        nameEditText.keyListener = null
 
         // Set up the click listener for TextInputEditText
         nameEditText.setOnClickListener {
             //Create an Intent to navigate to MyPlantFragments
-           val intent = Intent(activity, DiscoverPlant::class.java)
+            val intent = Intent(activity, DiscoverPlant::class.java)
 
             // Optionally, you can add extras to the intent if needed
             // intent.putExtra("key", "value")
