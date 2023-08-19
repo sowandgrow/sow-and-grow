@@ -23,6 +23,63 @@
         android:theme="@style/Theme.SowAndGrow"
         tools:targetApi="31">
         <activity
+            android:name=".plantdetails.ZzPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.PhilodendronPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.JadePlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.MarigoldPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.WeepingfigPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.RubberPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.RoseusPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.LuckyBamboo"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.LavenderPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.HibiscusPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.HolyBasil"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.AloeveraPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.SpiderPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.MoneyPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.GereniumPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.CrotonPLant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.BostonFern"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.ArrowheadVine"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.ArecaPlant"
+            android:exported="false" />
+        <activity
             android:name=".plantdetails.SnakePlant"
             android:exported="false" />
         <activity
