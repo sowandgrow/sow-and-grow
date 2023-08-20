@@ -46,4 +46,27 @@
         No plants added.\n
         To add new plant go to "Add Plant." </string>
 
+    //plants description
+    <string name="snakeplant">Plant Type : Evergreen Perennial\nBloom time : Spring(blooms are rare)\nColor : Greenish-white\nNative Area : Tropical West Africa
+    \nToxicity : Toxic\nSun Exposure : Full Sun to Low Light</string>
+    <string name="aloeveraplant">Plant Type : Succulent\nBloom time : Blooming occurs in Late Spring / Early Summer\nColor : Yellow,Red,Orange\nNative Area : Africa
+    \nToxicity : Toxic\nSun Exposure : Full Sun / Partial Shade</string>
+    <string name="arecaplant"> Plant Type : Evergreen Houseplant or Perennial\nBloom time : Summer\nColor : Pale Yellow\nNative Area : Madagascar and South India
+    \nToxicity : Non-Toxic\nSun Exposure : Bright , Indirect Light</string>
+    <string name="arrowheadvine" >Plant Type : Vine\nBloom time : Summer(Rarely Flowers)\nColor : White\nNative Area : South America, Mexico
+    \nToxicity : Non-Toxic\nSun Exposure : Partial Shade </string>
+    <string name="bostonfern" >Plant Type : Herbaceous Perennial Fern\nBloom time : Non-Flowering\nNative Area : Tropical Regions in America, Africa and Polynesia
+    \nToxicity : Non-Toxic\nSun Exposure : Moist Humusy , well-drained soil </string>
+    <string name="crotonplant" >Plant Type : Evergreen Shrub\nBloom time : Indoor Plants Rarely Flowers\nNative Area : Tropical Asia and Pacific Region
+    \nToxicity : Toxic\nSun Exposure : Bright , Indirect Light </string>
+    <string name="hibiscus" >Plant Type : Annual and Perennial Herbaceous\nBloom time : Summer , Fall, and Year-Round in Tropical climes\nColor : Various,incluing White,Red,Pink,etc\nNative Area : Asia, North America
+    \nToxicity : Non-Toxic\nSun Exposure : Full Sun , Partial Shade </string>
+    <string name="tulsi" >Plant Type : Annual , Perennial\nBloom time : Seasonal\nColor : Green\nNative Area : Indian Sub-Continent , Africa
+    \nToxicity : Non-Toxic\nSun Exposure : Full Sun </string>
+    <string name="jade" >Plant Type : Evergreen Perennial\nBloom time : Spring and Summer\nColor : White\nNative Area : South Africa
+    \nToxicity : Toxic\nSun Exposure : well-drained , loamy potting mix </string>
+    <string name="lavender" >Plant Type : Herbaceous Perennial\nBloom time : Summer\nColor : Purple, Violet-Blue,Pale-Pink\nNative Area : Europe
+    \nToxicity : Toxic\nSun Exposure : Full Sun </string>
+
+
 </resources>

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class PlantsAdapter(private val plantsList:ArrayList<Plants>)
     : RecyclerView.Adapter<PlantsAdapter.PlantsViewHolder>(){
 
+    var onItemClick: ((Plants)->Unit)?=null
     class PlantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         val imageView : ImageView = itemView.findViewById(R.id.imageviewplant)
@@ -24,7 +25,13 @@ class PlantsAdapter(private val plantsList:ArrayList<Plants>)
         val plants = plantsList[position]
         holder.imageView.setImageResource(plants.image)
         holder.textView.text = plants.name
+
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(plants)
+
+        }
     }
+
     override fun getItemCount(): Int {
         return plantsList.size
     }
