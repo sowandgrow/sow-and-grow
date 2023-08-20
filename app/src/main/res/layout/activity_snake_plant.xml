@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
@@ -7,6 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".plantdetails.SnakePlant">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView1"
         android:layout_width="match_parent"
@@ -70,23 +73,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/plant_type" />
 
-    <TextView
-        android:id="@+id/plant_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/manjari_bold"
-        android:maxLines="5"
-        android:text="@string/snakeplant"
-
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_name_view" />
+        <TextView
+            android:id="@+id/plant_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/manjari_bold"
+            android:text="@string/snakeplant"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/plant_name_view"
+            app:layout_constraintBottom_toTopOf="@id/logo"
+            app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/logo"
@@ -180,4 +183,5 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

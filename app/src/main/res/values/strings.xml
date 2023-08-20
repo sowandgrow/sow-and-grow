@@ -53,20 +53,60 @@
     \nToxicity : Toxic\nSun Exposure : Full Sun / Partial Shade</string>
     <string name="arecaplant"> Plant Type : Evergreen Houseplant or Perennial\nBloom time : Summer\nColor : Pale Yellow\nNative Area : Madagascar and South India
     \nToxicity : Non-Toxic\nSun Exposure : Bright , Indirect Light</string>
-    <string name="arrowheadvine" >Plant Type : Vine\nBloom time : Summer(Rarely Flowers)\nColor : White\nNative Area : South America, Mexico
+    <string name="arrowheadvine">Plant Type : Vine\nBloom time : Summer(Rarely Flowers)\nColor : White\nNative Area : South America, Mexico
     \nToxicity : Non-Toxic\nSun Exposure : Partial Shade </string>
-    <string name="bostonfern" >Plant Type : Herbaceous Perennial Fern\nBloom time : Non-Flowering\nNative Area : Tropical Regions in America, Africa and Polynesia
+    <string name="bostonfern">Plant Type : Herbaceous Perennial Fern\nBloom time : Non-Flowering\nNative Area : Tropical Regions in America, Africa and Polynesia
     \nToxicity : Non-Toxic\nSun Exposure : Moist Humusy , well-drained soil </string>
-    <string name="crotonplant" >Plant Type : Evergreen Shrub\nBloom time : Indoor Plants Rarely Flowers\nNative Area : Tropical Asia and Pacific Region
+    <string name="crotonplant">Plant Type : Evergreen Shrub\nBloom time : Indoor Plants Rarely Flowers\nNative Area : Tropical Asia and Pacific Region
     \nToxicity : Toxic\nSun Exposure : Bright , Indirect Light </string>
-    <string name="hibiscus" >Plant Type : Annual and Perennial Herbaceous\nBloom time : Summer , Fall, and Year-Round in Tropical climes\nColor : Various,incluing White,Red,Pink,etc\nNative Area : Asia, North America
+    <string name="hibiscus">Plant Type : Annual and Perennial Herbaceous\nBloom time : Summer , Fall, and Year-Round in Tropical climes\nColor : Various,incluing White,Red,Pink,etc\nNative Area : Asia, North America
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun , Partial Shade </string>
-    <string name="tulsi" >Plant Type : Annual , Perennial\nBloom time : Seasonal\nColor : Green\nNative Area : Indian Sub-Continent , Africa
+    <string name="tulsi">Plant Type : Annual , Perennial\nBloom time : Seasonal\nColor : Green\nNative Area : Indian Sub-Continent , Africa
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun </string>
-    <string name="jade" >Plant Type : Evergreen Perennial\nBloom time : Spring and Summer\nColor : White\nNative Area : South Africa
+    <string name="jade">Plant Type : Evergreen Perennial\nBloom time : Spring and Summer\nColor : White\nNative Area : South Africa
     \nToxicity : Toxic\nSun Exposure : well-drained , loamy potting mix </string>
-    <string name="lavender" >Plant Type : Herbaceous Perennial\nBloom time : Summer\nColor : Purple, Violet-Blue,Pale-Pink\nNative Area : Europe
+    <string name="lavender">Plant Type : Herbaceous Perennial\nBloom time : Summer\nColor : Purple, Violet-Blue,Pale-Pink\nNative Area : Europe
     \nToxicity : Toxic\nSun Exposure : Full Sun </string>
+    <string name="bamboo">Plant Type : Perennial Shrub\nBloom time : Fall,Winter(does not bloom indoors)\nColor : White\nNative Area : Africa
+    \nToxicity : Toxic\nSun Exposure : Partial Shade </string>
+    <string name="marigold">Plant Type : Herbaceous,Annual\nBloom time : Summer\nColor : Yellow,Orange,White,etc\nNative Area : Southern North America(Mexico)
+    \nToxicity : Toxic\nSun Exposure : Full Sun </string>
+    <string name="moneyplant">Plant Type : Evergreen Perennial\nBloom time : Spring\nColor : White\nNative Area : China
+    \nToxicity : Non-Toxic\nSun Exposure : Bright , Indirect Light </string>
+    <string name="philodendron">Plant Type : Houseplant,Perennial\nBloom time : None\nColor : None\nNative Area : RainForest of Tropical Central and South America
+    \nToxicity : Toxic\nSun Exposure : Equal Parts Loam,Sand and peat </string>
+    <string name="roseus">Plant Type : Herbaceous perennial\nBloom time : June to Frost\nColor : White,Pink,Mauve,Red\nNative Area : Madagascar
+    \nToxicity : Toxic\nSun Exposure : Full Sun to part shade </string>
+    <string name="rubber">Plant Type : Evergreen Shrub\nColor : Green\nNative Area : India, Nepal, Myanmar, China, Malaysia
+    \nToxicity : Toxic\nSun Exposure : Part Sun </string>
+    <string name="spiderplant">Plant Type : Herbaceous perennial\nBloom time : None\nColor : Leaves with creamy margins and a green center\nNative Area : South Africa
+    \nToxicity : Non-Toxic\nSun Exposure : Bright, Indirect Light </string>
+    <string name="weepingfig">Plant Type : Evergreen tree\nBloom time : Rarely flowers indoors\nColor : Red\nNative Area : India , Southeast Asia , Northern Australia
+    \nToxicity : Toxic\nSun Exposure : Bright , Indirect Light </string>
+    <string name="ZZplant">Plant Type : Tropical Perennial\nBloom time : Spring\nColor : Yellow-Brown spadix\nNative Area : Eastern Africa
+    \nToxicity : Toxic\nSun Exposure : Bright to Low Indirect Light </string>
+    <string name="ashwagandha" >Plant Type : Annual Shrub\nBloom time : Late spring , Summer , Early Fall\nColor : Green or Pale Green\nNative Area : MiddleEast, Parts of Africa and Asia
+    \nToxicity : Toxic\nSun Exposure : Full Sun to part shade </string>
+    <string name="betelplant" >Plant Type : Trailing or Climbing Evergreen Perennial\nBloom time : Rare in Cultivation\nColor : Green, Purple-Magenta Foliage\nNative Area : Peru
+    \nToxicity : Non-Toxic\nSun Exposure : Bright , Indirect Light </string>
+    <string name="bougainvillea" >Plant Type : Perennial Shrub\nBloom time : Summer , Spring , Fall\nColor : Pink , Purple , Red , Yellow\nNative Area : South America
+    \nToxicity : Non-Toxic\nSun Exposure :  Full Sun </string>
+    <string name="rose" >Plant Type : Perennial , Rose\nBloom time : Summer , Fall\nColor : Pink , Red , Etc\nNative Area : Hybrid , No native range
+    \nToxicity : Non-Toxic\nSun Exposure :  Full Sun </string>
+    <string name="peacelilyplant" >Plant Type : Flowering Tropical Plant\nBloom time : Spring\nColor : White , Yellow\nNative Area : The RainForest of Central and South America
+    \nToxicity : Toxic\nSun Exposure :  Medium , Indirect Light </string>
+    <string name="neem" >Plant Type : Broadleaf Evergreen Perennial\nBloom time : Mid-Spring\nColor : White Blossoms\nNative Area : Srilanka , Bangladesh , Pakistan , India and Nepal
+    \nToxicity : Toxic\nSun Exposure :  Full Sun to Partial Shade </string>
+    <string name="bonsai" >Plant Type : Deciduous or semi-deciduous tree \nBloom time : August-September\nColor : Silver bark: Small Serrated Leaves of Green Color\nNative Area : China and Southeast Asia
+    \nToxicity : Toxic\nSun Exposure :  Bright , Direct Light / Partial Shade </string>
+    <string name="mint" >Plant Type : Perennial\nBloom time : Summer\nColor : Green , Blue\nNative Area : Africa , Australia , North America
+    \nToxicity : Toxic\nSun Exposure :  Full Sun , Part Sun </string>
+    <string name="lemongrass" >Plant Type: Ornamental Grass\nBloom time : No Flowers\nColor : None\nNative Area : Srilanka , India
+    \nToxicity : Toxic\nSun Exposure :  Full Sun </string>
+    <string name="laceleaf" >Plant Type : Herbaceous perennial\nBloom time : None\nColor : None\nNative Area : Central America , Northern South America , Caribbean
+    \nToxicity : Toxic\nSun Exposure : Bright Indirect Light </string>
+    <string name="jasmine" >Plant Type : Broadleaf Evergreen Climber\nBloom time : June to August\nColor : White\nNative Area : Asia Minor , Himalayas , China
+    \nToxicity : Non-Toxic\nSun Exposure :  Full Sun to Part Shade </string>
 
 
 </resources>

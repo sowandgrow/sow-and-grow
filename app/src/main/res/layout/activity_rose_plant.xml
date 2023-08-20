@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".plantdetails.RubberPlant">
+    tools:context=".plantdetails.RosePlant">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView1"
@@ -29,11 +31,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/plant_image_view"
+                android:id="@+id/plant_image_view1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/rubberplant01"
+                android:src="@drawable/rose"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,30 +46,30 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/plant_type"
+        android:id="@+id/plant_type1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/manjari_bold"
-        android:text="Ficus Elastica"
+        android:text="Rosa"
         android:textColor="#0C976A"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView1" />
 
     <TextView
-        android:id="@+id/plant_name_view"
+        android:id="@+id/plant_name_view1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/manjari_bold"
-        android:text="Rubber Plant"
+        android:text="Rose Plant"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_type" />
+        app:layout_constraintTop_toBottomOf="@id/plant_type1" />
 
     <TextView
         android:id="@+id/plant_desc"
@@ -78,12 +80,12 @@
         android:layout_marginEnd="20dp"
         android:ellipsize="end"
         android:fontFamily="@font/manjari_bold"
-        android:text= "@string/rubber"
+        android:text="@string/rose"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_name_view"
+        app:layout_constraintTop_toBottomOf="@id/plant_name_view1"
         app:layout_constraintBottom_toTopOf="@id/logo"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -106,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/manjari_bold"
-        android:text="Easy"
+        android:text="Medium"
         android:textColor="#666666"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/materialButton2"
@@ -131,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/manjari_bold"
-        android:text="Every 3-7 Days"
+        android:text="Every Week"
         android:textColor="#666666"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/materialButton2"
@@ -155,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/manjari_bold"
-        android:text="Part Sun"
+        android:text="Full Sun"
         android:textColor="#666666"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/materialButton2"
@@ -179,5 +181,4 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,39 @@
         android:theme="@style/Theme.SowAndGrow"
         tools:targetApi="31">
         <activity
+            android:name=".plantdetails.AshwagandhaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.BetelPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.BougainvilleaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.RosePlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.PeacelilyPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.Neem"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.BonsaiPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.Mint"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.Lemongrass"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.LaceleafPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.JasminePlant"
+            android:exported="false" />
+        <activity
             android:name=".plantdetails.ZzPlant"
             android:exported="false" />
         <activity
