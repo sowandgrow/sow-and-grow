@@ -7,34 +7,32 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PlantsAdapter(private val plantsList:ArrayList<Plants>)
-    : RecyclerView.Adapter<PlantsAdapter.PlantsViewHolder>(){
+class PlantsAdapter(private val plantsList: ArrayList<Plants>)
+    : RecyclerView.Adapter<PlantsAdapter.PlantsViewHolder>() {
 
-    var onItemClick: ((Plants)->Unit)?=null
-    class PlantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-    {
-        val imageView : ImageView = itemView.findViewById(R.id.imageviewplant)
-        val textView : TextView = itemView.findViewById(R.id.textviewplant)
+    var onItemClick: ((Plants) -> Unit)? = null
+
+    class PlantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.imageviewplant)
+        val textView: TextView = itemView.findViewById(R.id.textviewplant)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent,false)
-        return  PlantsViewHolder(view)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        return PlantsViewHolder(view)
     }
+
     override fun onBindViewHolder(holder: PlantsViewHolder, position: Int) {
-        val plants = plantsList[position]
-        holder.imageView.setImageResource(plants.image)
-        holder.textView.text = plants.name
+        val plant = plantsList[position]
+        holder.imageView.setImageResource(plant.image)
+        holder.textView.text = plant.name
 
-        holder.itemView.setOnClickListener{
-            onItemClick?.invoke(plants)
-
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(plant)
         }
     }
 
     override fun getItemCount(): Int {
         return plantsList.size
     }
-
-
 }
