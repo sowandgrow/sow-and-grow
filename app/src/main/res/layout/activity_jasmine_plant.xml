@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".plantdetails.JasminePlant">
@@ -31,7 +29,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/plant_image_view1"
+                android:id="@+id/plant_image_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
@@ -46,20 +44,21 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/plant_type1"
+        android:id="@+id/plant_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/manjari_bold"
-        android:text="Jasminum Officinaes"
+        android:text="Jasminum Officinale"
         android:textColor="#0C976A"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardView1" />
+        app:layout_constraintTop_toBottomOf="@id/cardView1"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/plant_name_view1"
+        android:id="@+id/plant_name_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -69,7 +68,8 @@
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_type1" />
+        app:layout_constraintTop_toBottomOf="@id/plant_type"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/plant_desc"
@@ -85,7 +85,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_name_view1"
+        app:layout_constraintTop_toBottomOf="@id/plant_name_view"
         app:layout_constraintBottom_toTopOf="@id/logo"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -181,4 +181,5 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

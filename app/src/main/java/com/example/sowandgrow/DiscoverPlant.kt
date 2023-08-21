@@ -52,37 +52,35 @@ class DiscoverPlant : AppCompatActivity() {
 
         plantsList = ArrayList()
 
-        plantsList.add(Plants(R.drawable.snakeplant, "Snake Plant"))
+        plantsList.add(Plants(R.drawable.ashwagandha, "Ashwagandha"))
+        plantsList.add(Plants(R.drawable.aloevera, "Aloevera Plant"))
         plantsList.add(Plants(R.drawable.arecapalm, "Areca Plant"))
         plantsList.add(Plants(R.drawable.arrowheadvine, "Arrowhead Vine"))
-        plantsList.add(Plants(R.drawable.bostonfern, "Boston Fern"))
-        plantsList.add(Plants(R.drawable.croton, "Croton"))
-        plantsList.add(Plants(R.drawable.ashwagandha, "Ashwagandha"))
-        plantsList.add(Plants(R.drawable.moneyplant, "Money Plant"))
-        plantsList.add(Plants(R.drawable.spiderplant, "Spider Plant"))
-        plantsList.add(Plants(R.drawable.aloevera, "Aloevera Plant"))
-        plantsList.add(Plants(R.drawable.holybasil01, "Holy Basil"))
-        plantsList.add(Plants(R.drawable.lavender01, "Lavender Plant"))
-        plantsList.add(Plants(R.drawable.jade01, "Jade Plant"))
-        plantsList.add(Plants(R.drawable.luckybamboo01, "Lucky Bamboo Plant"))
-        plantsList.add(Plants(R.drawable.marigold01, "Marigold Plant"))
-        plantsList.add(Plants(R.drawable.rubberplant01, "Rubber Plant"))
-        plantsList.add(Plants(R.drawable.hibiscus01, "Hibiscus Plant"))
-        plantsList.add(Plants(R.drawable.philodendron03, "Philodendron Plant"))
-        plantsList.add(Plants(R.drawable.roseus, "Roseus Plant"))
-        plantsList.add(Plants(R.drawable.weepingfig02, "Weeping fig Plant"))
-        plantsList.add(Plants(R.drawable.zzplant02, "ZZ Plant"))
         plantsList.add(Plants(R.drawable.betel, "Betel Plant"))
         plantsList.add(Plants(R.drawable.bonsai, "Bonsai Plant"))
+        plantsList.add(Plants(R.drawable.bostonfern, "Boston Fern"))
         plantsList.add(Plants(R.drawable.bougainvillea, "Bougainvillea Plant"))
+        plantsList.add(Plants(R.drawable.croton, "Croton"))
+        plantsList.add(Plants(R.drawable.holybasil01, "Holy Basil"))
+        plantsList.add(Plants(R.drawable.hibiscus01, "Hibiscus Plant"))
+        plantsList.add(Plants(R.drawable.jade01, "Jade Plant"))
         plantsList.add(Plants(R.drawable.jasmine, "Jasmine Plant"))
-        plantsList.add(Plants(R.drawable.laceleaf, "Lace-leaf"))
+        plantsList.add(Plants(R.drawable.laceleaf, "Laceleaf"))
+        plantsList.add(Plants(R.drawable.lavender01, "Lavender Plant"))
+        plantsList.add(Plants(R.drawable.luckybamboo01, "Lucky Bamboo Plant"))
         plantsList.add(Plants(R.drawable.lemongrass, "Lemongrass"))
-        plantsList.add(Plants(R.drawable.mint, "Mint"))
+        plantsList.add(Plants(R.drawable.marigold01, "Marigold Plant"))
+        plantsList.add(Plants(R.drawable.moneyplant, "Money Plant"))
         plantsList.add(Plants(R.drawable.neem, "Neem"))
         plantsList.add(Plants(R.drawable.peacelily, "PeaceLily Plant"))
+        plantsList.add(Plants(R.drawable.philodendron03, "Philodendron Plant"))
+        plantsList.add(Plants(R.drawable.rubberplant01, "Rubber Plant"))
+        plantsList.add(Plants(R.drawable.roseus, "Roseus Plant"))
         plantsList.add(Plants(R.drawable.rose, "Rose Plant"))
-
+        plantsList.add(Plants(R.drawable.snakeplant, "Snake Plant"))
+        plantsList.add(Plants(R.drawable.spiderplant, "Spider Plant"))
+        plantsList.add(Plants(R.drawable.weepingfig02, "Weeping fig Plant"))
+        plantsList.add(Plants(R.drawable.zzplant02, "ZZ Plant"))
 
 
         plantsAdapter = PlantsAdapter(plantsList)
@@ -197,17 +195,17 @@ class DiscoverPlant : AppCompatActivity() {
                     intent.putExtra("plants", clickedPlant)
                     startActivity(intent)
                 }
-                "Bougainvillea" -> {
+                "Bougainvillea Plant" -> {
                     val intent = Intent(this, BougainvilleaPlant::class.java)
                     intent.putExtra("plants", clickedPlant)
                     startActivity(intent)
                 }
-                "Jasmine" -> {
+                "Jasmine Plant" -> {
                     val intent = Intent(this, JasminePlant::class.java)
                     intent.putExtra("plants", clickedPlant)
                     startActivity(intent)
                 }
-                "Lace-leaf " -> {
+                "Laceleaf" -> {
                     val intent = Intent(this, LaceleafPlant::class.java)
                     intent.putExtra("plants", clickedPlant)
                     startActivity(intent)
