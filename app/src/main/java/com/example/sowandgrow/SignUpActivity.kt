@@ -50,12 +50,12 @@ class SignUpActivity : BaseActivity() {
                         showToast(this, "User Id Created successfully")
                         hideProgressBar()
 
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, SignInActivity::class.java)
                         intent.putExtra("userName", name)
                         startActivity(intent)
                         finish()
                     } else {
-                        val errorMessage = task.exception?.message ?: "Oops! Something went wrong"
+                        val errorMessage = task.exception?.message ?: "Registration Failed, Please Try Again"
                         Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                         hideProgressBar()
                         Log.e("SignUpActivity", "Error during sign-up: $errorMessage")
