@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -98,9 +99,6 @@
             android:name=".plantdetails.MoneyPlant"
             android:exported="false" />
         <activity
-            android:name=".plantdetails.GereniumPlant"
-            android:exported="false" />
-        <activity
             android:name=".plantdetails.CrotonPLant"
             android:exported="false" />
         <activity
@@ -117,9 +115,6 @@
             android:exported="false" />
         <activity
             android:name=".DiscoverPlant"
-            android:exported="false" />
-        <activity
-            android:name=".DiscoverRecyclerView"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
