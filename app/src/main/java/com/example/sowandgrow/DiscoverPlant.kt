@@ -2,7 +2,9 @@ package com.example.sowandgrow
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sowandgrow.plantdetails.AglaonemaPlant
@@ -62,12 +64,17 @@ import com.example.sowandgrow.plantdetails.ViolasPlant
 import com.example.sowandgrow.plantdetails.WeepingfigPlant
 import com.example.sowandgrow.plantdetails.ZebraPlant
 import com.example.sowandgrow.plantdetails.ZzPlant
+import java.util.Locale
 
 class DiscoverPlant : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var plantsList : ArrayList<Plants>
     private lateinit var plantsAdapter: PlantsAdapter
+    private lateinit var searchView: SearchView
+
+    private var noPlantFoundToast: Toast? = null
+    private var initialSearchAttempted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +83,7 @@ class DiscoverPlant : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
 
         plantsList = ArrayList()
 
@@ -92,9 +100,7 @@ class DiscoverPlant : AppCompatActivity() {
         plantsList.add(Plants(R.drawable.bougainvillea, "Bougainvillea Plant"))
         plantsList.add(Plants(R.drawable.caladiumplant, "Caladium Plant"))
         plantsList.add(Plants(R.drawable.calatheaplant, "Calatheas Plant"))
-        plantsList.add(Plants(R.drawable.caladiumplant, "Caladium Plant"))
         plantsList.add(Plants(R.drawable.cactus1, "Cactus Plant"))
-        plantsList.add(Plants(R.drawable.calatheaplant, "Calatheas Plant"))
         plantsList.add(Plants(R.drawable.castironplant, "Cast Iron Plant"))
         plantsList.add(Plants(R.drawable.croton, "Croton"))
         plantsList.add(Plants(R.drawable.devilivy, "Devil's Ivy Plant"))
@@ -141,6 +147,19 @@ class DiscoverPlant : AppCompatActivity() {
 
         plantsAdapter = PlantsAdapter(plantsList)
         recyclerView.adapter = plantsAdapter
+
+        searchView = findViewById(R.id.searchView)
+        searchView.clearFocus()
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+        })
 
         plantsAdapter.onItemClick = { clickedPlant ->
             when (clickedPlant.name) {
@@ -493,5 +512,46 @@ class DiscoverPlant : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun filterList(newText: String?) {
+        val filteredList = ArrayList<Plants>()
+
+        if (!newText.isNullOrBlank()) {
+            for (plant in plantsList) {
+                if (plant.name.lowercase(Locale.getDefault()).contains(newText.lowercase(Locale.getDefault()))) {
+                    filteredList.add(plant)
+                }
+            }
+        }
+        else {
+            // If the search text is empty, show the entire list
+            filteredList.addAll(plantsList)
+        }
+        if (!initialSearchAttempted) {
+            // If it's the first search attempt, display the original list
+            initialSearchAttempted = true
+        }
+
+        if (filteredList.isEmpty()) {
+            showNoPlantFoundToast()
+        } else {
+            hideNoPlantFoundToast()
+        }
+
+        plantsAdapter.setFilteredList(filteredList)
+
+    }
+
+    private fun showNoPlantFoundToast() {
+        if (noPlantFoundToast == null) {
+            noPlantFoundToast = Toast.makeText(this, "No Plant Found", Toast.LENGTH_SHORT)
+            noPlantFoundToast?.show()
+        }
+    }
+
+    private fun hideNoPlantFoundToast() {
+        noPlantFoundToast?.cancel()
+        noPlantFoundToast = null
     }
 }

@@ -7,9 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PlantsAdapter(private val plantsList: ArrayList<Plants>)
+class PlantsAdapter(private val originalPlantsList: List<Plants>)
     : RecyclerView.Adapter<PlantsAdapter.PlantsViewHolder>() {
 
+    private val filteredPlantsList = ArrayList<Plants>(originalPlantsList)
     var onItemClick: ((Plants) -> Unit)? = null
 
     class PlantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,7 +24,7 @@ class PlantsAdapter(private val plantsList: ArrayList<Plants>)
     }
 
     override fun onBindViewHolder(holder: PlantsViewHolder, position: Int) {
-        val plant = plantsList[position]
+        val plant = filteredPlantsList[position]
         holder.imageView.setImageResource(plant.image)
         holder.textView.text = plant.name
 
@@ -33,6 +34,18 @@ class PlantsAdapter(private val plantsList: ArrayList<Plants>)
     }
 
     override fun getItemCount(): Int {
-        return plantsList.size
+        return filteredPlantsList.size
+    }
+
+    fun setFilteredList(filteredList: List<Plants>) {
+        filteredPlantsList.clear()
+        filteredPlantsList.addAll(filteredList)
+        notifyDataSetChanged()
+    }
+
+    fun restoreOriginalList() {
+        filteredPlantsList.clear()
+        filteredPlantsList.addAll(originalPlantsList)
+        notifyDataSetChanged()
     }
 }
