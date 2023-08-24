@@ -14,8 +14,6 @@ import android.widget.ImageView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.sowandgrow.DiscoverPlant
-import com.example.sowandgrow.R
 import com.google.android.material.textfield.TextInputEditText
 
 class Search : Fragment() {
@@ -88,12 +86,14 @@ class Search : Fragment() {
                         )
                     }
                 }
+
                 "Choose from Gallery" -> {
                     // Launch gallery intent
                     val pickPhotoIntent =
                         Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                     startActivity(pickPhotoIntent)
                 }
+
                 "Cancel" -> {
                     dialog.dismiss()
                 }
@@ -116,6 +116,8 @@ class Search : Fragment() {
             }
         }
     }
+
+
 
     companion object {
         private const val ARG_PARAM1 = "param1"

@@ -114,6 +114,87 @@
             android:name=".plantdetails.SnakePlant"
             android:exported="false" />
         <activity
+            android:name=".plantdetails.AglaonemaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.BegoniaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.CactusPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.CaladiumPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.CalatheasPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.CastironPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.DevilivyPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.DracaenaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.DragonTree"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.Englishivy"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.FiddleleafigPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.HeucheraPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.HydrangeaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.ImpatiensPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.InchPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.LobeliaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.MandevillaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.NorfolkPine"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.PothosPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.Sweetalyssum"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.SwisscheesePlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.SwordfernPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.TillandsiaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.ToreniaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.VerbenaPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.ZebraPlant"
+            android:exported="false" />
+        <activity
+            android:name=".plantdetails.ViolasPlant"
+            android:exported="false" />
+        <activity
             android:name=".DiscoverPlant"
             android:exported="false" />
         <activity

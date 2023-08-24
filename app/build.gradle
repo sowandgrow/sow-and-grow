@@ -41,6 +41,9 @@ android {
             java {
                 srcDirs 'src\\main\\java', 'src\\main\\java\\plantdata'
             }
+            res {
+                srcDirs 'src\\main\\res', 'src\\main\\res\\2'
+            }
         }
     }
 }
