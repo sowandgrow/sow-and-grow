@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sowandgrow.plantdetails.AglaonemaPlant
 import com.example.sowandgrow.plantdetails.AloeveraPlant
+import com.example.sowandgrow.plantdetails.ArboricolaPlant
 import com.example.sowandgrow.plantdetails.ArecaPlant
 import com.example.sowandgrow.plantdetails.ArrowheadVine
 import com.example.sowandgrow.plantdetails.AshwagandhaPlant
@@ -434,7 +435,7 @@ class DiscoverPlant : AppCompatActivity() {
                 }
 
                 "Arboricola Plant" -> {
-                    val intent = Intent(this, AglaonemaPlant::class.java)
+                    val intent = Intent(this, ArboricolaPlant::class.java)
                     intent.putExtra("plants", clickedPlant)
                     startActivity(intent)
                 }

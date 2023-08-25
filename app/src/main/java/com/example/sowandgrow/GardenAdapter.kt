@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GardenAdapter(private val gardenList: ArrayList<Garden>) :
+class GardenAdapter(private val gardenList: ArrayList<Garden>, private val onItemClick: (Garden) -> Unit) :
     RecyclerView.Adapter<GardenAdapter.GardenViewHolder>() {
 
     class GardenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,7 +28,10 @@ class GardenAdapter(private val gardenList: ArrayList<Garden>) :
         val garden = gardenList[position]
         holder.imageView3.setImageResource(garden.image)
         holder.textView3.text = garden.name
+
+        // Set click listener for the item
+        holder.itemView.setOnClickListener {
+            onItemClick(garden)
+        }
     }
 }
-
-
