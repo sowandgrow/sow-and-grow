@@ -24,11 +24,21 @@ class MyGarden : Fragment() {
             startActivity(intent)
         }
 
+        val plusIconButton: ImageButton = rootView.findViewById(R.id.plusIconButton)
+        plusIconButton.setOnClickListener {
+            try {
+                // Launch GardenGridView when the button is clicked
+                val intent = Intent(activity, GardenGridView::class.java)
+                startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+
+
         return rootView
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = MyGarden()
-    }
+
 }

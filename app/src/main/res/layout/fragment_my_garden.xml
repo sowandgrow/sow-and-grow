@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_3"
+    android:background="@drawable/gardenbg"
     tools:context=".MyGarden">
 
     <TextView
@@ -24,6 +24,15 @@
         android:contentDescription="Profile Picture"
         android:src="@drawable/ic_default_profile_picture"
         tools:ignore="HardcodedText" />
+
+    <ImageButton
+        android:id="@+id/plusIconButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        android:background="@android:color/transparent"
+        android:src="@drawable/iconplus" />
 
 
 </FrameLayout>

@@ -107,60 +107,60 @@
     \nToxicity : Toxic\nSun Exposure : Bright Indirect Light </string>
     <string name="jasmine">Plant Type : Broadleaf Evergreen Climber\nBloom time : June to August\nColor : White\nNative Area : Asia Minor , Himalayas , China
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun to Part Shade </string>
-    <string name="cactus" >Plant Type : Cactus\nBloom time : Summer\nColor : Yellow , Pink , Red , Orange\nNative Area : South America
+    <string name="cactus">Plant Type : Cactus\nBloom time : Summer\nColor : Yellow , Pink , Red , Orange\nNative Area : South America
     \nToxicity : Toxic\nSun Exposure : Full Sun to Partial Shade </string>
-    <string name="verbena" >Plant Type : Perennial\nBloom time : Summer , fall\nColor : Purple , Pink \nNative Area : Americas and Asia
+    <string name="verbena">Plant Type : Perennial\nBloom time : Summer , fall\nColor : Purple , Pink \nNative Area : Americas and Asia
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun  </string>
-    <string name="devilsivy" >Plant Type : Trailing Vine\nBloom time : Does not flower unless treated with a special hormone supplement \nColor : Does not flower
+    <string name="devilsivy">Plant Type : Trailing Vine\nBloom time : Does not flower unless treated with a special hormone supplement \nColor : Does not flower
     \nToxicity : Toxic\nSun Exposure : Part Shade Outdoors , bright indirect light indoors  </string>
-    <string name="fiddlefig" >Plant Type : Broadleaf Evergreen\nBloom time : Rarely flowers outside of its native area \nColor : Insignificnt\nNative Area : Tropical Western Africa
+    <string name="fiddlefig">Plant Type : Broadleaf Evergreen\nBloom time : Rarely flowers outside of its native area \nColor : Insignificnt\nNative Area : Tropical Western Africa
     \nToxicity : Toxic\nSun Exposure : Part Shade </string>
-    <string name="englishivy" >Plant Type : Perennial Woody Evergreen vine\nBloom time : None \nColor : None\nNative Area : Northern Europe and Western Asia
+    <string name="englishivy">Plant Type : Perennial Woody Evergreen vine\nBloom time : None \nColor : None\nNative Area : Northern Europe and Western Asia
     \nToxicity : Toxic\nSun Exposure :  Filtered Sun or Partial Shade </string>
-    <string name="pothos" >Plant Type : Perennial , Vine\nBloom time : Spring , Summer \nColor : Green , White\nNative Area : South America
+    <string name="pothos">Plant Type : Perennial , Vine\nBloom time : Spring , Summer \nColor : Green , White\nNative Area : South America
     \nToxicity : Toxic\nSun Exposure : Partial Sun </string>
-    <string name="aglaonema" >Sun exposure : Bright indirect Light\n Soil Type: Well-draining potting soil\n Native Area: Asia , New Guinea\nToxicity : Toxic\nHardiness Zones : 10-11 </string>
-    <string name="castiron" >Plant Type : Flowering Perennial , Houseplant\nBloom time : Early Summer \nColor : Cream with maroon on inner surface\nNative Area : Taiwan , Japanese Islands
+    <string name="aglaonema">Sun exposure : Bright indirect Light\n Soil Type: Well-draining potting soil\n Native Area: Asia , New Guinea\nToxicity : Toxic\nHardiness Zones : 10-11 </string>
+    <string name="castiron">Plant Type : Flowering Perennial , Houseplant\nBloom time : Early Summer \nColor : Cream with maroon on inner surface\nNative Area : Taiwan , Japanese Islands
     \nToxicity : Non-Toxic\nSun Exposure : Full Shade </string>
-    <string name="swisscheese" >Plant Type : Tropical\nBloom time : Spring\nColor : None\nNative Area : Central America
+    <string name="swisscheese">Plant Type : Tropical\nBloom time : Spring\nColor : None\nNative Area : Central America
     \nToxicity : Toxic\nSun Exposure : Full Sun , Partial Shade </string>
-    <string name="airplant" >Plant Type : Perennial Succulent\nBloom time : None\nColor : Blue , Purple\nNative Area : South America
+    <string name="airplant">Plant Type : Perennial Succulent\nBloom time : None\nColor : Blue , Purple\nNative Area : South America
     \nToxicity : Non-Toxic\nSun Exposure : Partial Shade </string>
-    <string name="calathea" >Plant Type : Perennial Succulent\nBloom time : \nColor : Blue , Purple\nNative Area : Eastern Brazil
+    <string name="calathea">Plant Type : Perennial Succulent\nBloom time : \nColor : Blue , Purple\nNative Area : Eastern Brazil
     \nToxicity : Non-Toxic\nSun Exposure : Light Shade </string>
-    <string name="swordfern" >Plant Type : Evergreen Fern\nBloom time : None\nColor : None\nNative Area : Australia
+    <string name="swordfern">Plant Type : Evergreen Fern\nBloom time : None\nColor : None\nNative Area : Australia
     \nToxicity : Non-Toxic\nSun Exposure : Partial Sun , Shade </string>
-    <string name="dracaena" >Plant Type : Shrub\nBloom time : Seasonal\nColor : None\nNative Area : Africa
+    <string name="dracaena">Plant Type : Shrub\nBloom time : Seasonal\nColor : None\nNative Area : Africa
     \nToxicity : Toxic\nSun Exposure : Partial Sun </string>
-    <string name="begonia" >Plant Type : Herbaceous Perennial\nBloom time : Last Spring through Early Fall\nColor : Green with colorfull bloom\nNative Area : South America
+    <string name="begonia">Plant Type : Herbaceous Perennial\nBloom time : Last Spring through Early Fall\nColor : Green with colorfull bloom\nNative Area : South America
     \nToxicity : Toxic\nSun Exposure : Part to full shade </string>
-    <string name="zebraplant" >Plant Type : Succulent\nBloom time : Summer\nColor : White\nNative Area : Southern Africa
+    <string name="zebraplant">Plant Type : Succulent\nBloom time : Summer\nColor : White\nNative Area : Southern Africa
     \nToxicity : Non-Toxic\nSun Exposure : Part Sun</string>
-    <string name="arboricola" >Plant Type : Evergreen Shrub\nBloom time : Summer\nColor : None\nNative Area : Taiwan
+    <string name="arboricola">Plant Type : Evergreen Shrub\nBloom time : Summer\nColor : None\nNative Area : Taiwan
     \nToxicity : Toxic\nSun Exposure : Bright , indirect light</string>
-    <string name="norfolkpine" >Plant Type : Evergreen , Conifer\nBloom time : None\nColor : None\nNative Area : Norfolk island in the pacific
+    <string name="norfolkpine">Plant Type : Evergreen , Conifer\nBloom time : None\nColor : None\nNative Area : Norfolk island in the pacific
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun; Can tolerate shade</string>
-    <string name="dragontree" >Plant Type : Broadleaf Evergreen\nBloom time : Spring\nColor : White\nNative Area : Madagascar and Mauritius
+    <string name="dragontree">Plant Type : Broadleaf Evergreen\nBloom time : Spring\nColor : White\nNative Area : Madagascar and Mauritius
     \nToxicity : Toxic\nSun Exposure : Bright , indirect light </string>
-    <string name="inchplant" >Plant Type : Herbaceous Perennial\nBloom time : Flowers freely at all time\nColor : Pink , Rose-purple , White\nNative Area : Mexico , South America
+    <string name="inchplant">Plant Type : Herbaceous Perennial\nBloom time : Flowers freely at all time\nColor : Pink , Rose-purple , White\nNative Area : Mexico , South America
     \nToxicity : Toxic\nSun Exposure : Bright , indirect sun </string>
-    <string name="impatiens" >Plant Type : Annual flowers\nBloom time : Spring through summer\nColor : White , Red , Pink , etc\nNative Area : Africa , Eurasia and North America
+    <string name="impatiens">Plant Type : Annual flowers\nBloom time : Spring through summer\nColor : White , Red , Pink , etc\nNative Area : Africa , Eurasia and North America
     \nToxicity : Non-Toxic\nSun Exposure : Full Shade , part shade </string>
-    <string name="sweetaly" >Plant Type : Annual plant\nBloom time : June through October\nColor : White , Pale Pink , Purple\nNative Area : Mediterranean region and in france
+    <string name="sweetaly">Plant Type : Annual plant\nBloom time : June through October\nColor : White , Pale Pink , Purple\nNative Area : Mediterranean region and in france
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun , partial shade </string>
-    <string name="caladium" >Plant Type : Tuberous tropical plant\nBloom time : None\nColor : None\nHardiness Zone : 9-11
+    <string name="caladium">Plant Type : Tuberous tropical plant\nBloom time : None\nColor : None\nHardiness Zone : 9-11
     \nToxicity : Toxic\nSun Exposure : Part Sun , Filtered shade , shade </string>
-    <string name="lobelia" >Plant Type : Tender Perennial\nBloom time : Summer to Fall\nColor : Blue , Purple , White , etc\nNative Area : Southern Africa
+    <string name="lobelia">Plant Type : Tender Perennial\nBloom time : Summer to Fall\nColor : Blue , Purple , White , etc\nNative Area : Southern Africa
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun , partial shade </string>
-    <string name="torenia" >Plant Type : Annual Flowering plant\nBloom time : June to Frost\nColor : Blue-Purple , White , Pink etc\nNative Area : Southern Africa
+    <string name="torenia">Plant Type : Annual Flowering plant\nBloom time : June to Frost\nColor : Blue-Purple , White , Pink etc\nNative Area : Southern Africa
     \nToxicity : Non-Toxic\nSun Exposure : Full Shade , partial shade </string>
-    <string name="mandevilla" >Plant Type : Vine , Perennial , annual\nBloom time : Summer , Fall\nColor : White\nNative Area : North , central , south America
+    <string name="mandevilla">Plant Type : Vine , Perennial , annual\nBloom time : Summer , Fall\nColor : White\nNative Area : North , central , south America
     \nToxicity : Toxic\nSun Exposure : Full Sun</string>
-    <string name="hydrangea" >Plant Type : Deciduous Shrub\nBloom time : Early to late Summer\nColor : White\nNative Area : China , Japan
+    <string name="hydrangea">Plant Type : Deciduous Shrub\nBloom time : Early to late Summer\nColor : White\nNative Area : China , Japan
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun to part shade</string>
-    <string name="heuchera" >Plant Type : Evergreen perennial flower\nBloom time : Spring , Summer\nColor : Red , White , pink\nNative Area : North American woodlands
+    <string name="heuchera">Plant Type : Evergreen perennial flower\nBloom time : Spring , Summer\nColor : Red , White , pink\nNative Area : North American woodlands
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun to part shade</string>
-    <string name="violas" >Plant Type : Annual\nBloom time : Spring or fall bloom\nColor : Violet , white , blue ,etc\nNative Area : North America
+    <string name="violas">Plant Type : Annual\nBloom time : Spring or fall bloom\nColor : Violet , white , blue ,etc\nNative Area : North America
     \nToxicity : Non-Toxic\nSun Exposure : Full Sun</string>
 
 
