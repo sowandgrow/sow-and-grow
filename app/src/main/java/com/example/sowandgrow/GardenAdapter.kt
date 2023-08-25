@@ -11,12 +11,12 @@ class GardenAdapter(private val gardenList: ArrayList<Garden>) :
     RecyclerView.Adapter<GardenAdapter.GardenViewHolder>() {
 
     class GardenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.imageView3)
-        val textView: TextView = itemView.findViewById(R.id.textView3)
+        val imageView3: ImageView = itemView.findViewById(R.id.imageView3)
+        val textView3: TextView = itemView.findViewById(R.id.textView3)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GardenViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.grid_view_card, parent, false)
         return GardenViewHolder(view)
     }
 
@@ -26,8 +26,8 @@ class GardenAdapter(private val gardenList: ArrayList<Garden>) :
 
     override fun onBindViewHolder(holder: GardenViewHolder, position: Int) {
         val garden = gardenList[position]
-        holder.imageView.setImageResource(garden.image)
-        holder.textView.text = garden.name
+        holder.imageView3.setImageResource(garden.image)
+        holder.textView3.text = garden.name
     }
 }
 

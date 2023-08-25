@@ -13,7 +13,7 @@ class GardenGridView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_garden_grid_view)
         init()
     }
 

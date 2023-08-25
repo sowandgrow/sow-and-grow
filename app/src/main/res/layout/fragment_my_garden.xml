@@ -32,7 +32,9 @@
         android:layout_margin="16dp"
         android:layout_gravity="bottom|end"
         android:background="@android:color/transparent"
-        android:src="@drawable/iconplus" />
+        android:src="@drawable/iconplus"
+        android:contentDescription="Add Item to Garden" />
+
 
 
 </FrameLayout>

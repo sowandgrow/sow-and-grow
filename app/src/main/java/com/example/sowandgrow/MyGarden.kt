@@ -2,11 +2,11 @@ package com.example.sowandgrow
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
 
 class MyGarden : Fragment() {
 
@@ -26,19 +26,10 @@ class MyGarden : Fragment() {
 
         val plusIconButton: ImageButton = rootView.findViewById(R.id.plusIconButton)
         plusIconButton.setOnClickListener {
-            try {
-                // Launch GardenGridView when the button is clicked
-                val intent = Intent(activity, GardenGridView::class.java)
-                startActivity(intent)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+            val intent = Intent(activity, GardenGridView::class.java)
+            startActivity(intent)
         }
-
-
 
         return rootView
     }
-
-
 }
