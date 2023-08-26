@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/profilebg"
     tools:context=".ProfileActivity"
     tools:layout_editor_absoluteX="-16dp"
     tools:layout_editor_absoluteY="226dp">
