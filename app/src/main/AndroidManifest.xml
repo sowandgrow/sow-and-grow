@@ -199,6 +199,9 @@
             android:name=".plantdetails.ViolasPlant"
             android:exported="false" />
         <activity
+            android:name=".plantdetails.ArboricolaPlant"
+            android:exported="false" />
+        <activity
             android:name=".DiscoverPlant"
             android:exported="false" />
         <activity
