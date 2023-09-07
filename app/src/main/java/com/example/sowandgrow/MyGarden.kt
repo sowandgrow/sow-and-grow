@@ -26,7 +26,7 @@ class MyGarden : Fragment() {
 
         val plusIconButton: ImageButton = rootView.findViewById(R.id.plusIconButton)
         plusIconButton.setOnClickListener {
-            val intent = Intent(activity, GardenGridView::class.java)
+            val intent = Intent(activity, UploadActivity::class.java)
             startActivity(intent)
         }
 
