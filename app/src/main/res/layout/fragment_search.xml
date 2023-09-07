@@ -12,10 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="Search"
+        android:text="Plant Information"
         android:textAllCaps="true"
         android:textColor="@color/address"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,26 +44,13 @@
             android:id="@+id/searchBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search Plant"
+            android:hint="Discover Plant"
             android:inputType="none"
             android:paddingStart="16dp"
             android:textSize="20sp"
             android:background="@null"
             tools:ignore="HardcodedText,RtlSymmetry" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/photocamera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.17" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

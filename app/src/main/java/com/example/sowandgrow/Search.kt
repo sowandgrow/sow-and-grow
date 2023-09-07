@@ -1,18 +1,10 @@
 package com.example.sowandgrow;
 
-import android.Manifest
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
 
@@ -50,74 +42,8 @@ class Search : Fragment() {
             // Start the activity with the intent
             startActivity(intent)
         }
-
-        // Find the ImageView
-        val imageView: ImageView = view.findViewById(R.id.imageView)
-        imageView.setOnClickListener {
-            showImagePickerDialog()
-        }
-
         return view
     }
-
-    private fun showImagePickerDialog() {
-        val options = arrayOf("Take Photo", "Choose from Gallery", "Cancel")
-
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Choose an option")
-        builder.setItems(options) { dialog: DialogInterface, item: Int ->
-            when (options[item]) {
-                "Take Photo" -> {
-                    // Check camera permission
-                    if (ContextCompat.checkSelfPermission(
-                            requireContext(),
-                            Manifest.permission.CAMERA
-                        ) == PackageManager.PERMISSION_GRANTED
-                    ) {
-                        // Launch camera intent
-                        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                        startActivity(takePictureIntent)
-                    } else {
-                        // Request camera permission
-                        ActivityCompat.requestPermissions(
-                            requireActivity(),
-                            arrayOf(Manifest.permission.CAMERA),
-                            CAMERA_PERMISSION_REQUEST
-                        )
-                    }
-                }
-
-                "Choose from Gallery" -> {
-                    // Launch gallery intent
-                    val pickPhotoIntent =
-                        Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-                    startActivity(pickPhotoIntent)
-                }
-
-                "Cancel" -> {
-                    dialog.dismiss()
-                }
-            }
-        }
-        builder.show()
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == CAMERA_PERMISSION_REQUEST) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, launch camera intent
-                val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivity(takePictureIntent)
-            }
-        }
-    }
-
-
 
     companion object {
         private const val ARG_PARAM1 = "param1"
