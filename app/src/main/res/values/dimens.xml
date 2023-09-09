@@ -15,12 +15,4 @@
     <dimen name="toolbar_text_size">20dp</dimen>
     <dimen name="toolbar_icon_size">32dp</dimen>
 
-    <dimen name="_50sdp">50sdp</dimen>
-    <dimen name="_64sdp">64sdp</dimen>
-    <dimen name="_66sdp">66sdp</dimen>
-    <dimen name="_268sdp">268sdp</dimen>
-    <dimen name="_382sdp">382sdp</dimen>
-    <dimen name="_411sdp">411sdp</dimen>
-    <dimen name="_608sdp">608sdp</dimen>
-    <dimen name="_26sdp">26sdp</dimen>
 </resources>

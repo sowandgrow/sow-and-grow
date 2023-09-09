@@ -5,14 +5,13 @@ plugins {
 }
 
 android {
-    namespace 'com.example.sowandgrow'
+    namespace 'com.sowandgrow.app'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.sowandgrow"
-        minSdk 25
-        //noinspection OldTargetApi
-        targetSdk 31
+        applicationId "com.sowandgrow.app"
+        minSdk 24
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -25,7 +24,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -36,19 +34,10 @@ android {
     buildFeatures{
         viewBinding true
     }
-    sourceSets {
-        main {
-            java {
-                srcDirs 'src\\main\\java', 'src\\main\\java\\plantdata'
-            }
-            res {
-                srcDirs 'src\\main\\res', 'src\\main\\res\\2'
-            }
-        }
-    }
 }
 
 dependencies {
+
     // AndroidX libraries for UI components and app compatibility
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -59,17 +48,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
-    // Firebase libraries for authentication, Firestore, and Google Play services
-    implementation platform('com.google.firebase:firebase-bom:32.2.0')
-    implementation "com.google.firebase:firebase-auth-ktx"
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.7.0'
-    implementation "com.google.android.gms:play-services-auth:20.6.0"
-
     // GIF support for Android
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.27'
 
-    // Firebase Realtime Database
-    implementation 'com.google.firebase:firebase-database:20.2.2'
 
     // Testing libraries
     testImplementation 'junit:junit:4.13.2'
@@ -98,4 +79,9 @@ dependencies {
     // Responsive Android Layout
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
 
+    implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }

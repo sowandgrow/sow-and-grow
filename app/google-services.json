@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "1081370122786",
-    "project_id": "sowandgrow-88837",
-    "storage_bucket": "sowandgrow-88837.appspot.com"
+    "project_number": "601829491882",
+    "project_id": "sowandgrowapp-b0c3d",
+    "storage_bucket": "sowandgrowapp-b0c3d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1081370122786:android:6e1c67e30b59910c51c87b",
+        "mobilesdk_app_id": "1:601829491882:android:945babc91c187f48847cd3",
         "android_client_info": {
-          "package_name": "com.example.sowandgrow"
+          "package_name": "com.sowandgrow.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1081370122786-0nb1jgtt8517j830o4v6nieltdhu3tb1.apps.googleusercontent.com",
+          "client_id": "601829491882-l1rhb3am1rbe8k3ptftg76974jk2t3cr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sowandgrow.app",
+            "certificate_hash": "3b502e0793354220c72ebfbcc0d64d9c29a6d561"
+          }
+        },
+        {
+          "client_id": "601829491882-lbgu910i5ds67ldf2t8po58e3pbtanqr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD8ip9KtUSkSYkuOUgRF4xdCcncfCShj2k"
+          "current_key": "AIzaSyBXD5J_aMjb6YwKmNvjv5D0SuhbpweHn2o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1081370122786-0nb1jgtt8517j830o4v6nieltdhu3tb1.apps.googleusercontent.com",
+              "client_id": "601829491882-lbgu910i5ds67ldf2t8po58e3pbtanqr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

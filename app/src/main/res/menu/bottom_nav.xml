@@ -9,6 +9,4 @@
     <item android:title="My Garden"
         android:id="@+id/mygarden"
         android:icon="@drawable/mygarden"/>
-
-
 </menu>
