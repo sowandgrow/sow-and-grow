@@ -6,6 +6,7 @@ public class DataClass {
     private String dataDesc;
     private String dataWater;
     private String dataImage;
+    private String key;
 
     public DataClass(String dataName, String dataBot, String dataDesc, String dataWater, String dataImage) {
         this.dataName = dataName;
@@ -14,6 +15,13 @@ public class DataClass {
         this.dataWater = dataWater;
         this.dataImage = dataImage;
 
+    }
+
+    public String getKey() {
+        return key;
+    }
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getDataName() {
@@ -34,5 +42,8 @@ public class DataClass {
     
     public String getDataImage() {
         return dataImage;
+    }
+
+    public DataClass(){
     }
 }

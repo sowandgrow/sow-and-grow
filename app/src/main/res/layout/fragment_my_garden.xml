@@ -51,6 +51,25 @@
         app:layout_constraintVertical_bias="0.271"
         tools:ignore="HardcodedText" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/green_border"
+        android:focusable="false"
+        app:closeIcon="@drawable/baseline_clear_24"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/curvedImageView"
+        app:layout_constraintVertical_bias="0.84"
+        app:queryHint="Search..."
+        app:searchHintIcon="@null"
+        app:searchIcon="@drawable/baseline_search_24" />
+
     <ImageButton
         android:id="@+id/plusIconButton"
         android:layout_width="50dp"
@@ -67,14 +86,15 @@
         tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView1"
         android:layout_width="382dp"
         android:layout_height="268dp"
         app:layout_constraintBottom_toBottomOf="@+id/curvedImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/curvedImageView"
-        app:layout_constraintVertical_bias="0.108"
+        app:layout_constraintVertical_bias="0.317"
         tools:ignore="TextSizeCheck" />
 
 
