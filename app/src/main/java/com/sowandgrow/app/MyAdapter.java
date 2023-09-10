@@ -48,10 +48,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
+                intent.putExtra("Name", dataList.get(holder.getAdapterPosition()).getDataName());
+                intent.putExtra("Botanical Name", dataList.get(holder.getAdapterPosition()).getDataBot());
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
-                intent.putExtra("Title", dataList.get(holder.getAdapterPosition()).getDataName());
+                intent.putExtra("Water", dataList.get(holder.getAdapterPosition()).getDataWater());
                 intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
-                intent.putExtra("Language", dataList.get(holder.getAdapterPosition()).getDataBot());
                 context.startActivity(intent);
             }
         });

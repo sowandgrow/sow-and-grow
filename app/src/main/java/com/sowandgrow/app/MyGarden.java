@@ -35,7 +35,7 @@ public class MyGarden extends Fragment {
     private AlertDialog dialog;
     private View view;
 
-    private ImageButton plusIconButton;
+    private FloatingActionButton plusIconButton;
 
     @Nullable
     @Override
