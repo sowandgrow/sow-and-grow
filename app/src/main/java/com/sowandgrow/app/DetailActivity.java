@@ -1,6 +1,7 @@
 package com.sowandgrow.app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,14 +55,13 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Android Tutorials");
                 FirebaseStorage storage = FirebaseStorage.getInstance();
-
                 StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
                 storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         reference.child(key).removeValue();
                         Toast.makeText(DetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), MyGarden.class));
+                        startActivity(new Intent(getApplicationContext(), MainScreenActivity.class));
                         finish();
                     }
                 });
