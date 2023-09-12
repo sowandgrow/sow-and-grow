@@ -5,13 +5,13 @@
     <string name="on_submit_msg">Check out your mailbox, you will receive an email containing link where you can reset your password</string>
 
     //Headings
-    <string name="heading_one">Search For Plants</string>
+    <string name="heading_one">Discover Plants</string>
     <string name="heading_two">Build Your Own Garden</string>
     <string name="heading_three">Health Assessment</string>
 
 
     //Description
-    <string name="desc_one">Using the camera, you can search for various plants.</string>
+    <string name="desc_one">User can explore different plants and their information</string>
     <string name="desc_two">Add your home plants and check their water requirements</string>
     <string name="desc_three">Plant Doctor will check the health of your plants</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>

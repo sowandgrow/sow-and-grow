@@ -7,50 +7,29 @@
     android:background="@drawable/background4"
     tools:context=".Search">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="discover.json"
+        app:lottie_loop="true" />
+
     <TextView
         android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="Plant Information"
+        android:text="EXPLORE PLANTS"
         android:textAllCaps="true"
         android:textColor="@color/address"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/search"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802"
+        app:layout_constraintVertical_bias="0.755"
         tools:ignore="HardcodedText" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/search"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
-        app:boxCornerRadiusBottomEnd="@dimen/til_radius"
-        app:boxCornerRadiusBottomStart="@dimen/til_radius"
-        app:boxCornerRadiusTopEnd="@dimen/til_radius"
-        app:boxCornerRadiusTopStart="@dimen/til_radius"
-        app:boxStrokeWidth="2dp"
-        app:hintEnabled="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/searchBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Discover Plant"
-            android:inputType="none"
-            android:paddingStart="16dp"
-            android:textSize="20sp"
-            android:background="@null"
-            tools:ignore="HardcodedText,RtlSymmetry" />
-    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

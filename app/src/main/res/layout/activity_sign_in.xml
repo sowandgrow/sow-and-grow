@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
-    <pl.droidsonroids.gif.GifImageView
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ivSinInLogo"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/login"
-        android:id="@+id/ivSinInLogo"
+        app:lottie_fileName="login.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         tools:ignore="MissingConstraints" />
 
     <TextView

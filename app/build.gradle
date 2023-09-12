@@ -70,6 +70,7 @@ dependencies {
     // Lottie for animations
     implementation "com.airbnb.android:lottie:6.1.0"
 
+
     // RecyclerView and selection library
     implementation "androidx.recyclerview:recyclerview:1.3.1"
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
@@ -90,4 +91,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     implementation 'com.github.clans:fab:1.6.4'
+
 }
