@@ -1,7 +1,6 @@
 package com.sowandgrow.app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,11 +44,11 @@ public class DetailActivity extends AppCompatActivity {
             detailName.setText(bundle.getString("Name"));
             detailBot.setText(bundle.getString("Botanical Name"));
             detailWater.setText(bundle.getString("Water"));
-
             key = bundle.getString("Key");
             imageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +66,7 @@ public class DetailActivity extends AppCompatActivity {
                 });
             }
         });
+
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
