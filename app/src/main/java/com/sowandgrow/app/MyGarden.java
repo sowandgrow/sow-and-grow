@@ -59,7 +59,7 @@ public class MyGarden extends Fragment {
         builder.setView(R.layout.progress_bar);
         dialog = builder.create();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Android Tutorials");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Android Plants");
 
         dialog.show();
 
@@ -111,7 +111,6 @@ public class MyGarden extends Fragment {
         plusIconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start UploadActivity
                 Intent intent = new Intent(getActivity(), UploadActivity.class);
                 startActivity(intent);
             }

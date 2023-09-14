@@ -42,9 +42,9 @@
                 android:scaleType="fitXY"/>
 
             <EditText
+                android:id="@+id/updateName"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/updateName"
                 android:background="@drawable/green_border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
@@ -53,9 +53,9 @@
                 android:textColor="@color/green_2"/>
 
             <EditText
+                android:id="@+id/updateBot"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/updateBot"
                 android:background="@drawable/green_border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
@@ -64,9 +64,9 @@
                 android:textColor="@color/green_2"/>
 
             <EditText
+                android:id="@+id/updateDesc"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:id="@+id/updateDesc"
                 android:background="@drawable/green_border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
@@ -75,9 +75,9 @@
                 android:textColor="@color/green_2"/>
 
             <EditText
+                android:id="@+id/updateWater"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/updateWater"
                 android:background="@drawable/green_border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
@@ -86,12 +86,12 @@
                 android:textColor="@color/green_2"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/updateButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Save"
                 android:textColor="@color/white"
                 android:background="@drawable/button_bg"
-                android:id="@+id/updateButton"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"
                 app:cornerRadius="20dp"/>

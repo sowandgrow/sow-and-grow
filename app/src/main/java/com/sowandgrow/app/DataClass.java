@@ -1,6 +1,7 @@
 package com.sowandgrow.app;
 
 public class DataClass {
+
     private String dataName;
     private String dataBot;
     private String dataDesc;
@@ -8,18 +9,10 @@ public class DataClass {
     private String dataImage;
     private String key;
 
-    public DataClass(String dataName, String dataBot, String dataDesc, String dataWater, String dataImage) {
-        this.dataName = dataName;
-        this.dataBot = dataBot;
-        this.dataDesc = dataDesc;
-        this.dataWater = dataWater;
-        this.dataImage = dataImage;
-
-    }
-
     public String getKey() {
         return key;
     }
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -39,11 +32,20 @@ public class DataClass {
     public String getDataWater() {
         return dataWater;
     }
-    
+
     public String getDataImage() {
         return dataImage;
     }
 
+    public DataClass(String dataName, String dataBot, String dataDesc, String dataWater, String dataImage) {
+        this.dataName = dataName;
+        this.dataBot = dataBot;
+        this.dataDesc = dataDesc;
+        this.dataWater = dataWater;
+        this.dataImage = dataImage;
+    }
+
     public DataClass(){
+
     }
 }

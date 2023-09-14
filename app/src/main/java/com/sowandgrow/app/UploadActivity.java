@@ -111,15 +111,14 @@ public class UploadActivity extends AppCompatActivity {
     }
 
     public void uploadData(){
-        String Name = uploadName.getText().toString();
-        String desc = uploadDesc.getText().toString();
-        String Bot = uploadBot.getText().toString();
-        String Water = uploadWater.getText().toString();
-        DataClass dataClass = new DataClass(Name, desc, Bot, Water, imageURL);
-        //We are changing the child from title to currentDate,
-        // because we will be updating title as well and it may affect child value.
+        String name = uploadName.getText().toString();
+        String botanical = uploadBot.getText().toString();
+        String description = uploadDesc.getText().toString();
+        String water = uploadWater.getText().toString();
+        DataClass dataClass = new DataClass(name, botanical, description, water, imageURL);
+
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
-        FirebaseDatabase.getInstance().getReference("Android Tutorials").child(currentDate)
+        FirebaseDatabase.getInstance().getReference("Android Plants").child(currentDate)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

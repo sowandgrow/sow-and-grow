@@ -33,8 +33,8 @@ public class UpdateActivity extends AppCompatActivity {
 
     ImageView updateImage;
     Button updateButton;
-    EditText updateDesc, updateName, updateBot, updateWater;
-    String name, desc, bot, water;
+    EditText updateDesc, updateBot, updateWater, updateName;
+    String name, description, botanical, water;
     String imageUrl;
     String key, oldImageURL;
     Uri uri;
@@ -46,12 +46,12 @@ public class UpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        updateButton = findViewById(R.id.updateButton);
-        updateDesc = findViewById(R.id.updateDesc);
-        updateImage = findViewById(R.id.updateImage);
-        updateBot = findViewById(R.id.updateBot);
         updateName = findViewById(R.id.updateName);
-        updateWater=findViewById(R.id.updateWater);
+        updateBot = findViewById(R.id.updateBot);
+        updateDesc = findViewById(R.id.updateDesc);
+        updateWater = findViewById(R.id.updateWater);
+        updateButton = findViewById(R.id.updateButton);
+        updateImage = findViewById(R.id.updateImage);
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -72,13 +72,13 @@ public class UpdateActivity extends AppCompatActivity {
         if (bundle != null){
             Glide.with(UpdateActivity.this).load(bundle.getString("Image")).into(updateImage);
             updateName.setText(bundle.getString("Name"));
+            updateBot.setText(bundle.getString("Botanical"));
             updateDesc.setText(bundle.getString("Description"));
-            updateBot.setText(bundle.getString("Botanical Name"));
             updateWater.setText(bundle.getString("Water"));
             key = bundle.getString("Key");
             oldImageURL = bundle.getString("Image");
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference("Android Tutorials").child(key);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Android Plants").child(key);
 
         updateImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,56 +92,66 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveData();
-                Intent intent = new Intent(UpdateActivity.this, MyGarden.class);
+                Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
     }
-    public void saveData(){
-        storageReference = FirebaseStorage.getInstance().getReference().child("Android Images").child(uri.getLastPathSegment());
+    public void saveData() {
+        if (uri != null) {
+            // Image is selected or updated
+            storageReference = FirebaseStorage.getInstance().getReference().child("Android Images").child(uri.getLastPathSegment());
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(UpdateActivity.this);
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_bar);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(UpdateActivity.this);
+            builder.setCancelable(false);
+            builder.setView(R.layout.progress_bar);
+            AlertDialog dialog = builder.create();
+            dialog.show();
 
-        storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete());
-                Uri urlImage = uriTask.getResult();
-                imageUrl = urlImage.toString();
-                updateData();
-                dialog.dismiss();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                dialog.dismiss();
-            }
-        });
+            storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                    while (!uriTask.isComplete());
+                    Uri urlImage = uriTask.getResult();
+                    imageUrl = urlImage.toString();
+                    updateData();
+                    dialog.dismiss();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    dialog.dismiss();
+                }
+            });
+        } else {
+            // No image selected or updated, proceed with updating other data
+            imageUrl = oldImageURL; // Use the existing image URL
+            updateData();
+        }
     }
-    public void updateData(){
+
+    public void updateData() {
         name = updateName.getText().toString().trim();
-        desc = updateDesc.getText().toString().trim();
-        bot = updateBot.getText().toString();
+        botanical = updateBot.getText().toString();
+        description = updateDesc.getText().toString().trim();
         water = updateWater.getText().toString();
 
-        DataClass dataClass = new DataClass(name, desc, bot, imageUrl, water);
+        DataClass dataClass = new DataClass(name, botanical, description, water, imageUrl);
 
         databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    StorageReference reference = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageURL);
-                    reference.delete();
+                if (task.isSuccessful()) {
+                    if (uri != null) {
+                        StorageReference reference = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageURL);
+                        reference.delete();
+                    }
                     Toast.makeText(UpdateActivity.this, "Updated", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
-        }).addOnFailureListener(new OnFailureListener() {
+       }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(UpdateActivity.this, e.getMessage().toString(), Toast.LENGTH_SHORT).show();

@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         if (bundle != null){
             detailDesc.setText(bundle.getString("Description"));
             detailName.setText(bundle.getString("Name"));
-            detailBot.setText(bundle.getString("Botanical Name"));
+            detailBot.setText(bundle.getString("Botanical"));
             detailWater.setText(bundle.getString("Water"));
             key = bundle.getString("Key");
             imageUrl = bundle.getString("Image");
@@ -52,7 +52,7 @@ public class DetailActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Android Tutorials");
+                final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Android Plants");
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
                 storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -73,7 +73,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(DetailActivity.this, UpdateActivity.class)
                         .putExtra("Name", detailName.getText().toString())
                         .putExtra("Description", detailDesc.getText().toString())
-                        .putExtra("Botanical Name", detailBot.getText().toString())
+                        .putExtra("Botanical", detailBot.getText().toString())
                         .putExtra("Water", detailWater.getText().toString())
                         .putExtra("Image", imageUrl)
                         .putExtra("Key", key);

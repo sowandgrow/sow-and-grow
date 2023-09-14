@@ -38,22 +38,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.recName.setText(dataList.get(position).getDataName());
-        holder.recDesc.setText(dataList.get(position).getDataDesc());
         holder.recBot.setText(dataList.get(position).getDataBot());
+        holder.recDesc.setText(dataList.get(position).getDataDesc());
         holder.recWater.setText(dataList.get(position).getDataWater());
-
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
-                intent.putExtra("Name", dataList.get(holder.getAdapterPosition()).getDataName());
-                intent.putExtra("Botanical Name", dataList.get(holder.getAdapterPosition()).getDataBot());
-                intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
-                intent.putExtra("Water", dataList.get(holder.getAdapterPosition()).getDataWater());
-                intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
-                context.startActivity(intent);
+                int position = holder.getBindingAdapterPosition(); // Use getBindingAdapterPosition() instead
+                if (position != RecyclerView.NO_POSITION) {
+                    Intent intent = new Intent(context, DetailActivity.class);
+                    intent.putExtra("Image", dataList.get(position).getDataImage());
+                    intent.putExtra("Name", dataList.get(position).getDataName());
+                    intent.putExtra("Botanical", dataList.get(position).getDataBot());
+                    intent.putExtra("Description", dataList.get(position).getDataDesc());
+                    intent.putExtra("Water", dataList.get(position).getDataWater());
+                    intent.putExtra("Key",dataList.get(position).getKey());
+                    context.startActivity(intent);
+                }
             }
         });
     }
@@ -72,18 +74,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 class MyViewHolder extends RecyclerView.ViewHolder{
 
     ImageView recImage;
-    TextView recName, recDesc, recBot, recWater;
     CardView recCard;
+    TextView recName, recBot, recDesc, recWater;
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
 
         recImage = itemView.findViewById(R.id.recImage);
         recCard = itemView.findViewById(R.id.recCard);
-        recDesc = itemView.findViewById(R.id.recDesc);
-        recBot = itemView.findViewById(R.id.recBot);
         recName = itemView.findViewById(R.id.recName);
+        recBot = itemView.findViewById(R.id.recBot);
+        recDesc = itemView.findViewById(R.id.recDesc);
         recWater = itemView.findViewById(R.id.recWater);
-
     }
 }
