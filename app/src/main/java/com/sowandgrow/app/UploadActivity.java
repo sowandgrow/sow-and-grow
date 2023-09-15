@@ -84,31 +84,38 @@ public class UploadActivity extends AppCompatActivity {
         });
     }
 
-    public void saveData(){
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Android Images")
-                .child(uri.getLastPathSegment());
-        AlertDialog.Builder builder = new AlertDialog.Builder(UploadActivity.this);
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_bar);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete());
-                Uri urlImage = uriTask.getResult();
-                imageURL = urlImage.toString();
-                uploadData();
-                dialog.dismiss();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                dialog.dismiss();
-            }
-        });
+    public void saveData() {
+        if (uri == null) {
+            // No image selected, show a message to the user
+            Toast.makeText(UploadActivity.this, "Please select an image", Toast.LENGTH_SHORT).show();
+        } else {
+            // Image is selected, proceed to save data
+            StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Android Images")
+                    .child(uri.getLastPathSegment());
+            AlertDialog.Builder builder = new AlertDialog.Builder(UploadActivity.this);
+            builder.setCancelable(false);
+            builder.setView(R.layout.progress_bar);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                    while (!uriTask.isComplete()) ;
+                    Uri urlImage = uriTask.getResult();
+                    imageURL = urlImage.toString();
+                    uploadData();
+                    dialog.dismiss();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    dialog.dismiss();
+                }
+            });
+        }
     }
+
 
     public void uploadData(){
         String name = uploadName.getText().toString();

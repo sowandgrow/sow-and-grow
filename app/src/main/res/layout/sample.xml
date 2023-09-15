@@ -2,11 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background11"
-    tools:context=".DetailActivity">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -18,15 +15,15 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631">
+        app:layout_constraintTop_toBottomOf="@+id/detailImage"
+        app:layout_constraintVertical_bias="0.5">
 
         <TextView
             android:id="@+id/detailBot"
-            android:layout_width="254dp"
-            android:layout_height="57dp"
+            android:layout_width="269dp"
+            android:layout_height="50dp"
             android:background="@drawable/green_border"
             android:fontFamily="@font/manjari_bold"
             android:gravity="center"
@@ -37,11 +34,12 @@
             android:text="Schefflera arboricola"
             android:textColor="#0C976A"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/detailName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.039" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/detailName"
@@ -73,17 +71,17 @@
             android:text="Description"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/detailWater"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.536" />
+            app:layout_constraintTop_toBottomOf="@+id/detailName"
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/detailWater"
-            android:layout_width="254dp"
-            android:layout_height="57dp"
+            android:layout_width="283dp"
+            android:layout_height="58dp"
             android:background="@drawable/green_border"
             android:ellipsize="end"
             android:fontFamily="@font/manjari_bold"
@@ -95,8 +93,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.83" />
+            app:layout_constraintTop_toBottomOf="@+id/detailDesc"
+            app:layout_constraintVertical_bias="0.266" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,10 +104,8 @@
         android:layout_height="204dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.258"
         tools:srcCompat="@tools:sample/avatars" />
 
     <com.github.clans.fab.FloatingActionMenu
@@ -117,11 +113,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/green_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        android:backgroundTint="@color/green_2"
+        app:layout_constraintVertical_bias="0.977"
         app:menu_colorNormal="@color/green_2"
         app:menu_colorPressed="@color/green_2"
         app:menu_fab_size="normal"
