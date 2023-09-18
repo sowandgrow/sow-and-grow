@@ -5,12 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background4"
-    tools:context=".Search">
+    tools:context=".fragments.Search">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="303dp"
+        android:layout_height="307dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:lottie_autoPlay="true"
         app:lottie_fileName="discover.json"
         app:lottie_loop="true" />
@@ -28,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755"
+        app:layout_constraintVertical_bias="0.699"
         tools:ignore="HardcodedText" />
 
 

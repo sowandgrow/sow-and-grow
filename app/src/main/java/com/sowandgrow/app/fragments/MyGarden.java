@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.fragments;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -20,6 +20,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.sowandgrow.app.DataClass;
+import com.sowandgrow.app.MyAdapter;
+import com.sowandgrow.app.ProfileActivity;
+import com.sowandgrow.app.R;
+import com.sowandgrow.app.UploadActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.sowandgrow.app.notifications.NotificationScheduler
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -90,6 +91,12 @@ class ProfileActivity : AppCompatActivity() {
                     finish()
                 }
             }
+        }
+
+        val notificationReminder = findViewById<ImageView>(R.id.notificationReminder)
+
+        notificationReminder.setOnClickListener{
+            startActivity(Intent(this, NotificationScheduler::class.java))
         }
     }
 

@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.fragments;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -16,6 +16,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.sowandgrow.app.R;
 
 public class Health extends Fragment {
     private Uri camUri = null;
