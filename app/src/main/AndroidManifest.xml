@@ -40,16 +40,16 @@
             android:name=".notifications.NotificationScheduler"
             android:exported="false" />
         <activity
-            android:name=".UpdateActivity"
+            android:name=".utils.UpdateActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".utils.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".UploadActivity"
+            android:name=".utils.UploadActivity"
             android:exported="false" />
         <activity
-            android:name=".GardenGridView"
+            android:name=".utils.GardenGridView"
             android:exported="false" />
         <activity
             android:name=".plantdetails.AshwagandhaPlant"
@@ -226,19 +226,19 @@
             android:name=".plantdetails.ArboricolaPlant"
             android:exported="false" />
         <activity
-            android:name=".DiscoverPlant"
+            android:name=".utils.DiscoverPlant"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".utils.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".MainScreenActivity"
+            android:name=".utils.MainScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".utils.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".utils.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -247,19 +247,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BaseActivity"
+            android:name=".utils.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgetPasswordActivity"
+            android:name=".auth.ForgetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".auth.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".GetStartedActivity"
+            android:name=".utils.GetStartedActivity"
             android:exported="false" />
     </application>
 

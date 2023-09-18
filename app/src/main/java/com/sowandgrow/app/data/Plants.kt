@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.data
 
 import android.os.Parcel
 import android.os.Parcelable

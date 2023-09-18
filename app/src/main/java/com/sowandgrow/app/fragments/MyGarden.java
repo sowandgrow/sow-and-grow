@@ -20,11 +20,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.sowandgrow.app.DataClass;
-import com.sowandgrow.app.MyAdapter;
-import com.sowandgrow.app.ProfileActivity;
+import com.sowandgrow.app.data.DataClass;
+import com.sowandgrow.app.adapters.MyAdapter;
+import com.sowandgrow.app.utils.ProfileActivity;
 import com.sowandgrow.app.R;
-import com.sowandgrow.app.UploadActivity;
+import com.sowandgrow.app.utils.UploadActivity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.sowandgrow.app.data.DataClass;
+import com.sowandgrow.app.utils.DetailActivity;
+import com.sowandgrow.app.R;
 
 import java.util.ArrayList;
 import java.util.List;

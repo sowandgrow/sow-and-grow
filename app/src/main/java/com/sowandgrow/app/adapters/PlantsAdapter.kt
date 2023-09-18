@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.sowandgrow.app.data.Plants
+import com.sowandgrow.app.R
 
 class PlantsAdapter(private val originalPlantsList: List<Plants>)
     : RecyclerView.Adapter<PlantsAdapter.PlantsViewHolder>() {

@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.auth
 
 import android.app.Activity
 import android.content.Intent
@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import androidx.activity.result.contract.ActivityResultContracts
-import com.sowandgrow.app.ForgetPasswordActivity
-import com.sowandgrow.app.SignUpActivity
 import com.sowandgrow.app.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -18,6 +16,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.sowandgrow.app.utils.BaseActivity
+import com.sowandgrow.app.utils.MainActivity
+import com.sowandgrow.app.R
 import kotlin.system.exitProcess
 
 class SignInActivity : BaseActivity() {

@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.sowandgrow.app.R;
+
 import pl.droidsonroids.gif.GifImageView;
 
 public class ViewPagerAdapter extends PagerAdapter {

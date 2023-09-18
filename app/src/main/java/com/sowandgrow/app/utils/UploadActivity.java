@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.utils;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -27,6 +27,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.sowandgrow.app.R;
+import com.sowandgrow.app.data.DataClass;
 
 import java.text.DateFormat;
 import java.util.Calendar;

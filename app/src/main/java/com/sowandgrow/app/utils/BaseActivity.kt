@@ -1,10 +1,11 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.utils
 
 import android.app.Activity
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sowandgrow.app.R
 
 open class BaseActivity : AppCompatActivity() {
     private lateinit var pb: Dialog

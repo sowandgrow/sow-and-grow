@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,14 +11,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
-import com.sowandgrow.app.MainScreenActivity;
-import com.sowandgrow.app.ViewPagerAdapter;
+import com.sowandgrow.app.R;
+import com.sowandgrow.app.adapters.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager mSLideViewPager;
+    private static final int NUM_PAGES = 3; // Number of onboarding pages
+
+    ViewPager mSlideViewPager;
     LinearLayout mDotLayout;
     Button backbtn, nextbtn, skipbtn;
 
@@ -29,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         boolean onboardingShownBefore = sharedPreferences.getBoolean("onboardingShown", false);
 
-            if (onboardingShownBefore) {
+        if (onboardingShownBefore) {
             // Onboarding already shown, proceed to the main activity or login screen
             startActivity(new Intent(this, MainScreenActivity.class));
             finish();
@@ -40,30 +44,26 @@ public class MainActivity extends AppCompatActivity {
             // Onboarding not shown yet, show onboarding screen
             setContentView(R.layout.activity_main);
 
-            // ... (your existing code for onboarding)
-
             // When the user completes the onboarding, set the flag to true indicating it has been shown
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("onboardingShown", true);
             editor.apply();
-        }
-        setContentView(R.layout.activity_main);
 
+            initializeViews(); // Move view initialization to a separate method
+        }
+    }
+
+    private void initializeViews() {
         backbtn = findViewById(R.id.backbtn);
         nextbtn = findViewById(R.id.nextbtn);
         skipbtn = findViewById(R.id.skipButton);
 
-
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (getitem(0) > 0){
-
-                    mSLideViewPager.setCurrentItem(getitem(-1),true);
-
+                if (getCurrentItem() > 0) {
+                    mSlideViewPager.setCurrentItem(getCurrentItem() - 1, true);
                 }
-
             }
         });
 
@@ -71,9 +71,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int totalSlides = viewPagerAdapter.getCount();
-
-                if (getitem(0) < totalSlides - 1) {
-                    mSLideViewPager.setCurrentItem(getitem(1), true);
+                if (getCurrentItem() < totalSlides - 1) {
+                    mSlideViewPager.setCurrentItem(getCurrentItem() + 1, true);
                 } else {
                     Intent i = new Intent(MainActivity.this, MainScreenActivity.class);
                     startActivity(i);
@@ -82,83 +81,55 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         skipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                Intent i = new Intent(MainActivity.this,MainScreenActivity.class);
+                Intent i = new Intent(MainActivity.this, MainScreenActivity.class);
                 startActivity(i);
                 finish();
-
             }
         });
 
-        mSLideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
-        mDotLayout = (LinearLayout) findViewById(R.id.indicator_layout);
+        mSlideViewPager = findViewById(R.id.slideViewPager);
+        mDotLayout = findViewById(R.id.indicator_layout);
 
         viewPagerAdapter = new ViewPagerAdapter(this);
+        mSlideViewPager.setAdapter(viewPagerAdapter);
 
-        mSLideViewPager.setAdapter(viewPagerAdapter);
-
-        setUpindicator(0);
-        mSLideViewPager.addOnPageChangeListener(viewListener);
-
+        setUpIndicator(0);
+        mSlideViewPager.addOnPageChangeListener(viewListener);
     }
 
-
-    public void setUpindicator(int position){
-
-        dots = new TextView[3];
+    private void setUpIndicator(int position) {
+        dots = new TextView[NUM_PAGES];
         mDotLayout.removeAllViews();
 
-        for (int i = 0 ; i < dots.length ; i++){
-
+        for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.inactive,getApplicationContext().getTheme()));
+            dots[i].setTextColor(ContextCompat.getColor(this, i == position ? R.color.active : R.color.inactive));
             mDotLayout.addView(dots[i]);
-
         }
+    }
 
-        dots[position].setTextColor(getResources().getColor(R.color.active,getApplicationContext().getTheme()));
-
+    private int getCurrentItem() {
+        return mSlideViewPager.getCurrentItem();
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
         }
 
         @Override
         public void onPageSelected(int position) {
-
-            setUpindicator(position);
-
-            if (position > 0){
-
-                backbtn.setVisibility(View.VISIBLE);
-
-            }else {
-
-                backbtn.setVisibility(View.INVISIBLE);
-
-            }
-
+            setUpIndicator(position);
+            backbtn.setVisibility(position > 0 ? View.VISIBLE : View.INVISIBLE);
         }
 
         @Override
         public void onPageScrollStateChanged(int state) {
-
         }
     };
-
-    private int getitem(int i){
-
-        return mSLideViewPager.getCurrentItem() + i;
-    }
-
 }

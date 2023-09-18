@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.utils
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.sowandgrow.app.Plants
-import com.sowandgrow.app.PlantsAdapter
+import com.sowandgrow.app.R
+import com.sowandgrow.app.adapters.PlantsAdapter
+import com.sowandgrow.app.data.Plants
 import com.sowandgrow.app.plantdetails.AglaonemaPlant
 import com.sowandgrow.app.plantdetails.AloeveraPlant
 import com.sowandgrow.app.plantdetails.ArboricolaPlant

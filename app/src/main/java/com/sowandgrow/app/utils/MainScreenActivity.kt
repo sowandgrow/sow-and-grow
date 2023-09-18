@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.utils
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import com.sowandgrow.app.databinding.ActivityMainScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.sowandgrow.app.R
 import com.sowandgrow.app.fragments.Health
 import com.sowandgrow.app.fragments.MyGarden
 import com.sowandgrow.app.fragments.Search

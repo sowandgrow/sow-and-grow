@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.sowandgrow.app.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.sowandgrow.app.utils.BaseActivity
 
 class SignUpActivity : BaseActivity() {
 

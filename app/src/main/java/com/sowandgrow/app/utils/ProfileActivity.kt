@@ -1,4 +1,4 @@
-package com.sowandgrow.app
+package com.sowandgrow.app.utils
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.sowandgrow.app.R
+import com.sowandgrow.app.auth.SignInActivity
 import com.sowandgrow.app.notifications.NotificationScheduler
 
 class ProfileActivity : AppCompatActivity() {

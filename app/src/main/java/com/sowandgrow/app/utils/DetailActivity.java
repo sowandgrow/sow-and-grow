@@ -1,4 +1,4 @@
-package com.sowandgrow.app;
+package com.sowandgrow.app.utils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.sowandgrow.app.R;
 
 public class DetailActivity extends AppCompatActivity {
 
