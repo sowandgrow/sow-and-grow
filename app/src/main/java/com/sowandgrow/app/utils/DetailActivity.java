@@ -21,7 +21,7 @@ import com.sowandgrow.app.R;
 public class DetailActivity extends AppCompatActivity {
 
     TextView detailDesc, detailName, detailBot, detailWater;
-    ImageView detailImage;
+    ImageView detailImage, backButton;
     FloatingActionButton deleteButton, editButton;
     String key = "";
     String imageUrl = "";
@@ -79,6 +79,14 @@ public class DetailActivity extends AppCompatActivity {
                         .putExtra("Image", imageUrl)
                         .putExtra("Key", key);
                 startActivity(intent);
+            }
+        });
+
+        backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }

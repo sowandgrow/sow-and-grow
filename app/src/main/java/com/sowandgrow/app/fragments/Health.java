@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -20,8 +21,17 @@ import androidx.fragment.app.Fragment;
 import com.sowandgrow.app.R;
 
 public class Health extends Fragment {
+
     private Uri camUri = null;
     private ImageView imageView;
+
+    private final OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+        @Override
+        public void handleOnBackPressed() {
+            // Handle the back button press here to exit the app
+            requireActivity().finishAffinity(); // This will close the current activity and all its parent activities.
+        }
+    };
 
     @Nullable
     @Override
@@ -34,6 +44,9 @@ public class Health extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // Add the callback to override the back button press
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
 
         final ActivityResultLauncher<Intent> startCamera = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -54,5 +67,13 @@ public class Health extends Fragment {
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, camUri);
             startCamera.launch(cameraIntent);
         });
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        // Remove the callback when the fragment is destroyed
+        callback.remove();
     }
 }

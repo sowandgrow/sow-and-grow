@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import com.sowandgrow.app.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -19,12 +21,14 @@ import com.google.firebase.ktx.Firebase
 import com.sowandgrow.app.utils.BaseActivity
 import com.sowandgrow.app.utils.MainActivity
 import com.sowandgrow.app.R
-import kotlin.system.exitProcess
+import com.sowandgrow.app.utils.TransparentLottieAnimationView
+import android.os.Handler
 
+
+@Suppress("DEPRECATION")
 class SignInActivity : BaseActivity() {
     private var binding: ActivitySignInBinding? = null
     private lateinit var auth: FirebaseAuth
-
     private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,13 +60,14 @@ class SignInActivity : BaseActivity() {
         binding?.btnSignInWithGoogle?.setOnClickListener { signInWithGoogle() }
     }
 
+
     private fun signInUser() {
         val email = binding?.etSinInEmail?.text.toString()
         val password = binding?.etSinInPassword?.text.toString()
         if (validateForm(email, password)) {
             showProgressBar()
             auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener() { task ->
+                .addOnCompleteListener{ task ->
                     if (task.isSuccessful) {
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
@@ -100,28 +105,56 @@ class SignInActivity : BaseActivity() {
         }
     }
 
+    fun updateUI(account: GoogleSignInAccount) {
+        // Show the custom loading animation
+        val lottieAnimationView = findViewById<TransparentLottieAnimationView>(R.id.lottie_animation_view)
 
-     fun updateUI(account: GoogleSignInAccount) {
-        showProgressBar()
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-        auth.signInWithCredential(credential).addOnCompleteListener {
-            if (it.isSuccessful) {
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-                hideProgressBar()
+        auth.signInWithCredential(credential).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                lottieAnimationView.visibility = View.VISIBLE
+                lottieAnimationView.playAnimation()
+                // Sign-in is successful, navigate to the main activity with a delay
+                val intent = Intent(this, MainActivity::class.java)
+
+                // Delay for 2 seconds (adjust as needed)
+                Handler().postDelayed({
+                    startActivity(intent)
+                    finish()
+
+                    // Hide the custom loading animation
+                    lottieAnimationView.visibility = View.GONE
+                    lottieAnimationView.cancelAnimation()
+                }, 2000) // Delay for 2 seconds
             } else {
+                // Sign-in encountered an error, display a message with a delay
                 showToast(this, "Can't login currently. Try after sometime")
-                hideProgressBar()
+
+                // Hide the custom loading animation with a delay
+                Handler().postDelayed({
+                    lottieAnimationView.visibility = View.GONE
+                    lottieAnimationView.cancelAnimation()
+                }, 2000) // Delay for 2 seconds
             }
         }
     }
 
-    override fun onBackPressed() {
-        // Check if the user is on the main activity, then finish the activity and exit the app
-        finishAffinity() // This will finish all activities in the stack
-        exitProcess(0)   // This will exit the app entirely
-    }
 
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("Are you sure you want to exit the app?")
+            .setPositiveButton("Yes") { _, _ ->
+                // If the user confirms, close the app
+                finish()
+            }
+            .setNegativeButton("No") { _, _ ->
+                // If the user cancels, do nothing
+            }
+            .create()
+            .show()
+    }
 
     private fun validateForm(email: String, password: String): Boolean {
         return when {
@@ -134,7 +167,6 @@ class SignInActivity : BaseActivity() {
                 binding?.tilPassword?.error = "Enter password"
                 false
             }
-
             else -> {
                 true
             }

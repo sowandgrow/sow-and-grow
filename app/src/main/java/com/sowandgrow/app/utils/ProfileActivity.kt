@@ -95,9 +95,16 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
 
+        val backButton = findViewById<ImageView>(R.id.backButton)
+
+        backButton.setOnClickListener {
+            finish()
+        }
+
+
         val notificationReminder = findViewById<ImageView>(R.id.notificationReminder)
 
-        notificationReminder.setOnClickListener{
+        notificationReminder.setOnClickListener {
             startActivity(Intent(this, NotificationScheduler::class.java))
         }
     }
