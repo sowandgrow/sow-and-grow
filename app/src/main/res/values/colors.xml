@@ -3,67 +3,25 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="blue_1">#BFD6F6</color>
-    <color name="blue_2">#8DBDFF</color>
-    <color name="blue_3">#64A1F4</color>
     <color name="blue_4">#4A91F2</color>
     <color name="blue_5">#3B7DD8</color>
 
     <color name="green_1">#50C878</color>
     <color name="green_2">#228B22</color>
-    <color name="green_3">#2AAA8A</color>
     <color name="green_4">#90EE90</color>
-    <color name="green_5">#93C572</color>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#349709</color>
-    <color name="teal_700">#176A08</color>
-    <color name="green_200">#5BAF11</color>
-    <color name="green_300">#4F9E0B</color>
-    <color name="green_500">#409116</color>
-    <color name="green_700">#288F10</color>
-    <color name="green_thumb">#82FF64</color>
-    <color name="transparent_white">#FAFFFFFF</color>
-    <color name="dark_grey">#919191</color>
-    <color name="blue_200">#4AC2F1</color>
-    <color name="blue_300">#3DABD6</color>
     <color name="blue_500">#347BE4</color>
-    <color name="blue_700">#235DD3</color>
-    <color name="blue_thumb">#5E93FF</color>
-    <color name="bronze_200">#A37953</color>
-    <color name="bronze_300">#95653A</color>
-    <color name="bronze_500">#8A5533</color>
-    <color name="bronze_700">#67401F</color>
-    <color name="bronze_thumb">#FFA458</color>
     <color name="red">#EF0F0F</color>
-    <color name="red_200">#F16E64</color>
-    <color name="orange">#FFAA2C</color>
 
 
     //profile
-    <color name="colorPrimary">#49BEFF</color>
-    <color name="colorPrimaryDark">#65DCE5</color>
-    <color name="colorAccent">#0D5D98</color>
     <color name="address">#2F7092</color>
-    <color name="followers">#0D5D98</color>
-    <color name="headings">#3797CF</color>
-    <color name="solidCircle">#80FFFFFF</color>
-    <color name="circleBorder">#000000</color>
-    <color name="gradEnd">#67EFC8</color>
-    <color name="gradStart">#63C9FF</color>
-    <color name="followersBg">#65DCE5</color>
-    <color name="followingBg">#49BEFF</color>
     <color name="grey">#E5E5E5</color>
 
     //onboarding colors
     <color name="background">#F0F4F3</color>
-    <color name="buttontext">#50C2C9</color>
 
     //indicator color
     <color name="inactive">#C4C4C4</color>
     <color name="active">#50C2C9</color>
 
-    <color name="card_graph_bg_color">#4A91F2</color>
-    <color name="graph_heading_color">#FFFFFF</color>
 </resources>

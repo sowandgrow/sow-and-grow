@@ -6,9 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.airbnb.lottie.LottieAnimationView;
-import com.sowandgrow.app.utils.DiscoverPlant;
 import com.sowandgrow.app.R;
-
+import com.sowandgrow.app.utils.DiscoverPlants;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +27,7 @@ public class Search extends Fragment {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start the DiscoverPlant activity
-                Intent intent = new Intent(getActivity(), DiscoverPlant.class);
+                Intent intent = new Intent(getActivity(), DiscoverPlants.class);
                 startActivity(intent);
             }
         });

@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/eachItem"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
+    android:clickable="true"
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="16dp"
     app:cardElevation="4dp">
@@ -14,17 +16,17 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageviewplant"
+            android:id="@+id/discoverPlantImage"
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            android:src="@drawable/snakeplant"
+            android:src="@drawable/background4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textviewplant"
+            android:id="@+id/discoverPlantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Snake Plant"
@@ -33,7 +35,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageviewplant"
+            app:layout_constraintStart_toEndOf="@+id/discoverPlantImage"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

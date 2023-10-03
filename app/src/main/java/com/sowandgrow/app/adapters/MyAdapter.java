@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<PlantViewHolder> {
 
     private Context context;
     private List<DataClass> dataList;
@@ -32,18 +32,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PlantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
-        return new MyViewHolder(view);
+        return new PlantViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
+    public void onBindViewHolder(@NonNull PlantViewHolder holder, int position) {
+        Glide.with(context).load(dataList.get(position).getDataImage())
+                .placeholder(R.drawable.sowandgrowlogo)
+                .into(holder.recImage);
         holder.recName.setText(dataList.get(position).getDataName());
         holder.recBot.setText(dataList.get(position).getDataBot());
-        holder.recDesc.setText(dataList.get(position).getDataDesc());
-        holder.recWater.setText(dataList.get(position).getDataWater());
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,13 +74,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 }
 
-class MyViewHolder extends RecyclerView.ViewHolder{
+class PlantViewHolder extends RecyclerView.ViewHolder{
 
     ImageView recImage;
     CardView recCard;
     TextView recName, recBot, recDesc, recWater;
 
-    public MyViewHolder(@NonNull View itemView) {
+    public PlantViewHolder(@NonNull View itemView) {
         super(itemView);
 
         recImage = itemView.findViewById(R.id.recImage);

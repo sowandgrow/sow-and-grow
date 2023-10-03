@@ -1,0 +1,32 @@
+{
+    "plants": {
+        "plant1": {
+            "imageResource": "https://5.imimg.com/data5/NP/GJ/XY/SELLER-15011588/natural-aloe-vera-leaf.jpg", 
+            "botanicalName": "Aloe Barbadensis",
+            "plantName": "Aloe Vera",
+            "plantType": "Succulent",
+            "bloomTime": "Blooming occurs in Late Spring / Early Summer",
+            "plantColor": "Yellow, Red, Orange",
+            "nativeArea": "Africa",
+            "toxicity": "Toxic",
+            "sunExposure": "Full Sun / Partial Shade",
+            "care": "Easy",
+            "water": "Every 1-2 Weeks",
+            "sun": "Fun Sun"
+        },
+        "plant2": {
+            "imageResource": "https://m.media-amazon.com/images/I/71uL5ps9NlL._AC_UF1000,1000_QL80_.jpg", 
+            "botanicalName": "Dypsis Lutescens",
+            "plantName": "Areca Plant",
+            "plantType": "Evergreen Houseplant or Perennial",
+            "bloomTime": "Summer",
+            "plantColor": "Pale Yellow",
+            "nativeArea": "Madagascar and South India",
+            "toxicity": "Non Toxic",
+            "sunExposure": "Bright, Indirect Light",
+            "care": "Medium",
+            "water": "Every 3-7 Days",
+            "sun": "Part-Full"
+        }
+    }
+}
