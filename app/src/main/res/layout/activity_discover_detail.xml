@@ -32,6 +32,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/backbtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.041"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.057"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -163,7 +175,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/sun22" />
+                app:srcCompat="@drawable/sunicon" />
 
             <TextView
                 android:id="@+id/discoverSun"
@@ -188,7 +200,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/careplant2" />
+                app:srcCompat="@drawable/careplanticon" />
 
             <TextView
                 android:id="@+id/discoverCare"
@@ -214,7 +226,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:layout_marginStart="20dp"
-                app:srcCompat="@drawable/waterplant2" />
+                app:srcCompat="@drawable/waterplanicon" />
 
             <TextView
                 android:id="@+id/discoverWater"

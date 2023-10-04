@@ -3,12 +3,14 @@ package com.sowandgrow.app.utils
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,22 +25,28 @@ import com.google.firebase.ktx.Firebase
 import com.sowandgrow.app.R
 import com.sowandgrow.app.auth.SignInActivity
 import com.sowandgrow.app.notifications.NotificationScheduler
+import de.hdodenhof.circleimageview.CircleImageView
+
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var profileImage: CircleImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        profileImage = findViewById(R.id.profile_image)
 
         auth = Firebase.auth
         val user = auth.currentUser
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         val nameEditText = findViewById<EditText>(R.id.name)
         val emailEditText = findViewById<EditText>(R.id.email)
-        val profileImageView = findViewById<ImageView>(R.id.profile_image)
+        val profileImageView = findViewById<CircleImageView>(R.id.profile_image)
         val locationInput = findViewById<TextInputEditText>(R.id.location)
 
         // Retrieve user's name from intent extras

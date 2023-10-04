@@ -3,6 +3,7 @@ package com.sowandgrow.app.utils;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +12,7 @@ import com.sowandgrow.app.R;
 
 public class DiscoverDetail extends AppCompatActivity {
 
-    ImageView discoverPlantImage;
+    ImageView discoverPlantImage, backbtn;
     TextView discoverBotanicalName, discoverPlantName, discoverPlantType, discoverBloomTime, discoverPlantColor,
             discoverNativeArea, discoverToxicity, discoverSunExposure, discoverCare, discoverWater, discoverSun;
 
@@ -48,5 +49,14 @@ public class DiscoverDetail extends AppCompatActivity {
             discoverWater.setText(bundle.getString("DiscoverPlantWater"));
             discoverSun.setText(bundle.getString("DiscoverPlantSun"));
         }
+
+        backbtn = findViewById(R.id.backbtn);
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 }

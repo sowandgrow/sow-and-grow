@@ -10,9 +10,9 @@ import com.google.firebase.ktx.Firebase
 import com.sowandgrow.app.R
 import com.sowandgrow.app.fragments.Health
 import com.sowandgrow.app.fragments.MyGarden
-import com.sowandgrow.app.fragments.Search
+import com.sowandgrow.app.fragments.Discover
 
-class MainScreenActivity : AppCompatActivity() {
+class MainScreenActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainScreenBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -24,13 +24,11 @@ class MainScreenActivity : AppCompatActivity() {
 
         firebaseAuth = Firebase.auth
 
-        // Set the initial profile picture (blank or user's Google profile picture)
-
-        replaceFragment(Search())
+        replaceFragment(Discover())
 
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.search -> replaceFragment(Search())
+                R.id.search -> replaceFragment(Discover())
                 R.id.health -> replaceFragment(Health())
                 R.id.mygarden -> replaceFragment(MyGarden())
                 else -> {

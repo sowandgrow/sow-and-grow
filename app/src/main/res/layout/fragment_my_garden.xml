@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gardenbackground"
+    android:background="@drawable/mygardenbackground"
     tools:context=".fragments.MyGarden">
 
     <ImageView
@@ -36,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePictureButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -49,7 +48,11 @@
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.296"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
+        app:civ_circle_background_color="#A0A0A0"
+        android:layout_gravity="center"/>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search"

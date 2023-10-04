@@ -147,7 +147,7 @@ class SignInActivity : BaseActivity() {
         builder.setMessage("Are you sure you want to exit the app?")
             .setPositiveButton("Yes") { _, _ ->
                 // If the user confirms, close the app
-                finish()
+                finishAffinity()
             }
             .setNegativeButton("No") { _, _ ->
                 // If the user cancels, do nothing

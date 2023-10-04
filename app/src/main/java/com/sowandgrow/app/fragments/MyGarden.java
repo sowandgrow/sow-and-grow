@@ -1,6 +1,7 @@
 package com.sowandgrow.app.fragments;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +17,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +31,8 @@ import com.sowandgrow.app.adapters.MyAdapter;
 import com.sowandgrow.app.utils.ProfileActivity;
 import com.sowandgrow.app.R;
 import com.sowandgrow.app.utils.UploadActivity;
+import com.sowandgrow.app.utils.BaseActivity;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,25 +40,17 @@ import java.util.List;
 public class MyGarden extends Fragment {
 
     private FloatingActionButton fab;
-    private DatabaseReference databaseReference;
-    private ValueEventListener eventListener;
-    private RecyclerView recyclerView;
     private List<DataClass> dataList;
     private MyAdapter adapter;
-    private SearchView searchView;
-    private AlertDialog dialog;
-    private View view;
-
-    private FloatingActionButton plusIconButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_my_garden, container, false);
+        View view = inflater.inflate(R.layout.fragment_my_garden, container, false);
 
-        recyclerView = view.findViewById(R.id.recyclerView1);
-        plusIconButton = view.findViewById(R.id.plusIconButton);
-        searchView = view.findViewById(R.id.search);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView1);
+        FloatingActionButton plusIconButton1 = view.findViewById(R.id.plusIconButton);
+        SearchView searchView = view.findViewById(R.id.search);
         searchView.clearFocus();
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
@@ -62,16 +60,14 @@ public class MyGarden extends Fragment {
         adapter = new MyAdapter(getActivity(), dataList);
         recyclerView.setAdapter(adapter);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_bar);
-        dialog = builder.create();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Android Plants");
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Android Plants");
+        BaseActivity baseActivity = (BaseActivity) getActivity();
+        baseActivity.showProgressBar();
 
-        dialog.show();
-
-        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+        // Hides the Progress Bar
+        ValueEventListener eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dataList.clear();
@@ -81,12 +77,14 @@ public class MyGarden extends Fragment {
                     dataList.add(dataClass);
                 }
                 adapter.notifyDataSetChanged();
-                dialog.dismiss();
+
+                // Hides the Progress Bar
+                baseActivity.hideProgressBar();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                dialog.dismiss();
+                baseActivity.hideProgressBar();
             }
         });
 
@@ -104,7 +102,7 @@ public class MyGarden extends Fragment {
         });
 
         // Click listener for profilePictureButton
-        ImageButton profilePictureButton = view.findViewById(R.id.profilePictureButton);
+        CircleImageView profilePictureButton = view.findViewById(R.id.profilePictureButton);
         profilePictureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +111,18 @@ public class MyGarden extends Fragment {
                 startActivity(intent);
             }
         });
+
+        // Load and display user's Google profile picture
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String photoUrl = user.getPhotoUrl() != null ? user.getPhotoUrl().toString() : null;
+            if (photoUrl != null) {
+                // Use Glide to load and display the profile picture
+                Glide.with(this)
+                        .load(photoUrl)
+                        .into(profilePictureButton);
+            }
+        }
 
         // Click listener for plusIconButton
         ImageButton plusIconButton = view.findViewById(R.id.plusIconButton);

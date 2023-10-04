@@ -37,15 +37,10 @@ class NotificationScheduler : AppCompatActivity() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
             intent.putExtra("android.provider.extra.APP_PACKAGE", packageName)
-        } else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+        } else
             intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
             intent.putExtra("app_package", packageName)
             intent.putExtra("app_uid", applicationInfo.uid)
-        } else {
-            intent.action = "android.settings.APPLICATION_DETAILS_SETTINGS"
-            intent.addCategory(Intent.CATEGORY_DEFAULT)
-            intent.data = android.net.Uri.parse("package:$packageName")
-        }
         startActivityForResult(intent, notificationPermissionRequestCode)
     }
 
