@@ -75,7 +75,6 @@ public class DiscoverPlants extends BaseActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(DiscoverPlants.this, "Failed To Load", Toast.LENGTH_SHORT).show();
-                hideProgressBar();
             }
         });
 
