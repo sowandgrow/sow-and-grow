@@ -5,7 +5,7 @@ Sow and Grow is an Android application developed using Android Studio. It is des
 
 ### Features
 
-1.  **Discover**
+1. **Discover**
    - Explore a variety of plants.
    - Learn about different plants, including their common names, botanical names, and descriptions.
 
