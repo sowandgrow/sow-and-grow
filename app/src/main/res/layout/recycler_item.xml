@@ -28,23 +28,25 @@
 
         <TextView
             android:id="@+id/recName"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/recImage"
             android:text="Name"
-            android:textColor="@color/green_2"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/recBot"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="27dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/recName"
             android:text="Botanical Name"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textColor="@color/green_2"
             android:textSize="20sp" />
 
