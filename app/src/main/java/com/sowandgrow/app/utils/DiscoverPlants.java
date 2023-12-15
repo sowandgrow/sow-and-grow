@@ -1,6 +1,5 @@
 package com.sowandgrow.app.utils;
 
-
 import androidx.appcompat.widget.SearchView;
 import android.os.Bundle;
 import com.sowandgrow.app.R;
@@ -8,7 +7,6 @@ import com.sowandgrow.app.adapters.PlantsAdapter;
 import com.sowandgrow.app.data.PlantsModel;
 import android.annotation.SuppressLint;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

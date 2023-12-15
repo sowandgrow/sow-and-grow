@@ -1,29 +1,25 @@
 package com.sowandgrow.app.fragments;
 
-import android.app.Activity;
-import android.content.ContentValues;
+import android.Manifest;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.activity.OnBackPressedCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.sowandgrow.app.PlantDetection;
 import com.sowandgrow.app.R;
 
 public class Health extends Fragment {
 
-    private Uri camUri = null;
-    private ImageView imageView;
+    private static final int CAMERA_PERMISSION_REQUEST = 111;
 
     private final OnBackPressedCallback callback = new OnBackPressedCallback(true) {
         @Override
@@ -33,40 +29,35 @@ public class Health extends Fragment {
         }
     };
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_health, container, false);
-        imageView = view.findViewById(R.id.opencamera);
+        ImageView openCameraImageView = view.findViewById(R.id.opencamera);
+
+        // Set an OnClickListener on the ImageView
+        openCameraImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check and request camera permission
+                if (checkCameraPermission()) {
+                    // Camera permission granted, navigate to PlantDetection activity
+                    navigateToPlantDetection();
+                } else {
+                    // Request camera permission
+                    requestCameraPermission();
+                }
+            }
+        });
+
         return view;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         // Add the callback to override the back button press
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
-
-        final ActivityResultLauncher<Intent> startCamera = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        imageView.setImageURI(camUri);
-                    }
-                }
-        );
-
-        imageView.setOnClickListener(v -> {
-            ContentValues values = new ContentValues();
-            values.put(MediaStore.Images.Media.TITLE, "New Picture");
-            values.put(MediaStore.Images.Media.TITLE, "From Camera");
-            camUri = requireContext().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-
-            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, camUri);
-            startCamera.launch(cameraIntent);
-        });
     }
 
     @Override
@@ -75,5 +66,31 @@ public class Health extends Fragment {
 
         // Remove the callback when the fragment is destroyed
         callback.remove();
+    }
+
+    private boolean checkCameraPermission() {
+        return ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestCameraPermission() {
+        ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
+    }
+
+    private void navigateToPlantDetection() {
+        // Redirect to PlantDetection activity
+        Intent intent = new Intent(requireActivity(), PlantDetection.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == CAMERA_PERMISSION_REQUEST) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Camera permission granted, navigate to PlantDetection activity
+                navigateToPlantDetection();
+            } else {
+                // Permission denied, show a message or take appropriate action
+            }
+        }
     }
 }

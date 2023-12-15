@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlantDetection">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Image Classify"
+        android:id="@+id/title"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/title"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/selectBtn"
+        android:layout_width="166dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Select image" />
+
+    <Button
+        android:id="@+id/captureBtn"
+        android:layout_width="139dp"
+        android:layout_height="68dp"
+        android:layout_below="@id/selectBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Capture" />
+
+    <Button
+        android:id="@+id/predictBtn"
+        android:layout_width="116dp"
+        android:layout_height="67dp"
+        android:layout_below="@id/captureBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Predict" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Result : "
+        android:id="@+id/result"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/predictBtn"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
